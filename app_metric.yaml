@@ -1,0 +1,176 @@
+---
+metrics:
+    - metricName: health
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: Health
+
+    - metricName: ps_load
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: Load
+
+    - metricName: load
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: Load
+
+    - metricName: server_count
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: ServerCount
+
+    - metricName: server_down_count
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: ServerDownCount
+
+    - metricName: client_count
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: ClientCount
+
+    - metricName: long_running_request_count
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: LongRunningRequestCount
+
+    - metricName: requests_total
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAPPSRV_*"
+      jmxAttrName: TotalRequestCount
+
+    - metricName: reqests_avg
+      role: app
+      attrType: avg
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAPPSRV_*"
+      jmxAttrName: TotalRequestCount
+
+    - metricName: request_per_sec_total
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAPPSRV_*"
+      jmxAttrName: Troughput
+
+    - metricName: request_per_sec_avg
+      role: app
+      attrType: avg
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAPPSRV_*"
+      jmxAttrName: Troughput
+
+    - metricName: psappsrv_active_pct
+      role: app
+      attrType: pct
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAPPSRV_*"
+      jmxAttrName: CurrentService
+      attrWhere: "!IDLE"
+
+    - metricName: cache_memory_size_kb_total
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:Server=PSAPPSRV,Instance=*,Type=ManagedObjectCacheRuntime"
+      jmxAttrName: TotalMemorySize
+
+    - metricName: cache_memory_size_kb_avg
+      role: app
+      attrType: avg
+      jmxClass: "com.peoplesoft:Server=PSAPPSRV,Instance=*,Type=ManagedObjectCacheRuntime"
+      jmxAttrName: TotalMemorySize
+
+    - metricName: queue.server_count
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=APPQ"
+      jmxAttrName: ServerCount
+
+    - metricName: queue.requests_per_sec
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=APPQ"
+      jmxAttrName: Throughput
+      
+    - metricName: queue.depth
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=APPQ"
+      jmxAttrName: CurrentQueueDepth
+
+    - metricName: ib.sub_requests_per_sec
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=SUBHQ_*"
+      jmxAttrName: Throughput
+
+    - metricName: ib.sub_max_queue_depth
+      role: app
+      attrType: max
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=SUBHQ_*"
+      jmxAttrName: CurrentQueueDepth
+
+    - metricName: ib.pub_requests_per_sec
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=PUBHQ_*"
+      jmxAttrName: Throughput
+
+    - metricName: ib.pub_max_queue_depth
+      role: app
+      attrType: max
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoQueueRuntime,Name=PUBHQ_*"
+      jmxAttrName: CurrentQueueDepth
+
+    - metricName: tcp.close_wait_state
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=NetworkStatisticsRuntime"
+      jmxAttrName: TCPSocketsInCloseWaitState
+
+    - metricName: tcp.time_wait_state
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=NetworkStatisticsRuntime"
+      jmxAttrName: TCPSocketsInTimeWaitState
+
+    - metricName: tcp.established_state
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=NetworkStatisticsRuntime"
+      jmxAttrName: TCPSocketsInEstablishedState
+
+    - metricName: tcp.fin_wait1_state
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=NetworkStatisticsRuntime"
+      jmxAttrName: TCPSocketsInFINWait1State
+
+    - metricName: tcp.fin_wait2_state
+      role: app
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=NetworkStatisticsRuntime"
+      jmxAttrName: TCPSocketsInFINWait2State
+
+    - metricName: client_trans_aborted_count
+      role: app
+      attrType: sum
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoClientRuntime,CLIENTID=*"
+      jmxAttrName: TransactionsAbortedCount
+
+    - metricName: request_process_time_ms_avg
+      role: app
+      attrType: avg
+      jmxClass: "com.peoplesoft:Server=PSAPPSRV,Instance=*,Type=RequestExecutorRuntime"
+      jmxAttrName: AverageProcessingTime
+
+    - metricName: request_service_time_ms_avg
+      role: app
+      attrType: avg
+      jmxClass: "com.peoplesoft:Server=PSAPPSRV,Instance=*,Type=RequestExecutorRuntime"
+      jmxAttrName: AverageTotalServiceTime

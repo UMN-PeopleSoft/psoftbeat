@@ -1,0 +1,13 @@
+# Directories
+build
+logs
+data
+vendor
+docs
+blackoutList.csv
+exclusionList.csv
+domainList.csv
+nailgun.log*
+psoftjmx.log
+psoftbeat
+logging.properties

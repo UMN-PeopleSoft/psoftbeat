@@ -1,0 +1,30 @@
+- module: psoft
+  metricsets: ["weblogic", "appserver", "scheduler"]
+  enabled: true
+  period: 30s
+  # metrics always ran locally, the PSoft JMX Library will handle remote targets through custom configs
+  hosts: ["localhost"]
+
+  # Path to a list of targets using a space separated 'csv' format, see example domain list file.
+  # All targets you want to monitor.  Maintain the list with your operational scripts to add domain to list when it is created/deleted.
+  # Metricbeat will re-load this list for every metric capture to automatically monitor new domains as they are created.
+  pathInventoryFile: "domainList_example.csv"
+  # Path to a list of domain names in blackout state, will mark target as blackout instead of down or alerting.
+  # Maintain this file with your operations scripts for stop/start.  Metricbeat will reload list for every metric capture.
+  pathBlackoutFile: "blackoutList_example.csv"
+  # Path to a list of domains to exclude.  if you run domains in standby and shutdown, add to this list.
+  # Monitoring will be ignored for these targets.  Useful if you domain list/inventory may include these targets.
+  pathExclusionFile: "exclusionList_example.csv"
+  # Prebuilt JMX attribute to metric configurations for each metricset.  No need to change
+  attribWebMetrics: "web_metric.yaml"
+  attribAppMetrics: "app_metric.yaml"
+  attribPrcMetrics: "prc_metric.yaml"
+  # A Java 1.8 JRE to be used by JMX Client (and Nailgun) to connected to Weblogic and App Server RMI services.
+  javaPath: "/psoft/admin/software/java/jdk1.8.0_141/jre"
+  # Debugging support, defaults to INFO
+  #logLevel:
+  # Number of concurrent workers to pull metrics for a target.
+  # Default is 5, adjust based on size of host and number of total targets/domains.
+  #concurrentWorkers:
+  # Conntect string to nailgun server. This uses a UNIX socket.  Defaults to: "local:/tmp/psmetric.socket"
+  #nailgunServerConn:

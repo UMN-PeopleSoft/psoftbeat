@@ -1,0 +1,9 @@
+- key: psoft
+  title: "PeopleSoft Metricbeat"
+  description: >
+    Captures metrics for PeopleSoft environments
+  fields:
+    - name: psoft
+      type: group
+      description: >
+      fields:

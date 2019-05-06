@@ -1,0 +1,166 @@
+- name: appserver
+  type: group
+  description: >
+    Captures PS App Server (Tuxedo) metrics for PeopleSoft environments
+  fields:
+    - name: domain_name
+      type: keyword
+      description: >
+          Unique name of Peoplesoft domain when created.
+    - name: domain_type
+      type: keyword
+      description: >
+          Type of PeopleSoft domain = app,web,prc.  These will be web.
+    - name: purpose
+      type: keyword
+      description: >
+          Domain sub type = main(PIA), IB, REN, trace.
+    - name: app
+      type: keyword
+      description: >
+          Valid application code = cs, fs, hr, ih, ln, cr representing the application the domain is for.
+    - name: env
+      type: keyword
+      description: >
+          Environment code for domain = dev, tst, qat, prd, trn, per, dmo ...etc.
+    - name: tools_version
+      type: keyword
+      description: >
+          Current tools version of the domain.
+    - name: host
+      type: keyword
+      description: >
+          Host where the domain is running
+    - name: health
+      type: keyword
+      description: >
+          Current Health of PeopleSoft Weblogic domain
+          Values = Ok, Warn, Critical, Failed, Overloaded, Down, Blackout
+    - name: load
+      type: keyword
+      description: >
+          Current load of the Weblogic domain.  Calculated from the JVM/process CPU load.
+          Values = Light (load < 0.5), Medium (0.5 > load < 0.8), High (load > 0.8)
+    - name: server_count
+      type: long
+      description: >
+          Number of PSAPPSRV instances 
+    - name: server_down_count
+      type: long
+      description: >
+          Number of PSAPPSRV instances currently down 
+    - name: client_count
+      type: long
+      description: >
+          Number of Clients via JSH connected to domain. 
+    - name: long_running_request_count
+      type: long
+      description: >
+          Number of PSAPPSRV requests running above average time 
+    - name: requests_total
+      type: long
+      description: >
+          Number of requests from all PSAPPSRVs.
+    - name: reqests_avg
+      type: scaled_float
+      description: >
+          Average number of requests per PSAPPSRV. 
+    - name: request_per_sec_total
+      type: scaled_float
+      description: >
+          Requests per second for all PSAPPSRVs. 
+    - name: request_per_sec_avg
+      type: scaled_float
+      description: >
+          Average requests per second for each PSAPPSRVs.
+    - name: psappsrv_active_pct
+      type: scaled_float
+      format: percent
+      description: >
+          Percentage of PSAPPSRVs currently processing a request. 
+    - name: client_trans_aborted_count
+      type: long
+      description: >
+          Number of client requests that threw a Jolt error. 
+    - name: request_process_time_ms_avg
+      type: scaled_float
+      description: >
+          Average time required to complete a request. 
+    - name: request_service_time_ms_avg
+      type: scaled_float
+      description: >
+          Average time required to complete the service handling of a request. 
+
+    - name: cache
+      type: group
+      description: >
+          Cache management in PS Appserver Domain
+      fields:
+        - name: memory_size_kb_total
+          type: long
+          description: >
+              Cache memory used for all PSAPPSRVs (kb).
+        - name: memory_size_kb_avg
+          type: scaled_float
+          description: >
+              Average cache memory used for each PSAPPSRV (kb).
+
+    - name: queue
+      type: group
+      description: >
+          Appserver Domain Queues metrics
+      fields:
+        - name: server_count
+          type: long
+          description: >
+              Number of queues.
+        - name: requests_per_sec
+          type: scaled_float
+          description: >
+              Number of requests per second passed through the queue.
+        - name: depth
+          type: long
+          description: >
+              Number of requests currently queued.
+        - name: ib.sub_requests_per_sec
+          type: scaled_float
+          description: >
+              Number of requests per seconds in the Sub Handler queue.
+        - name: ib.sub_max_queue_depth
+          type: scaled_float
+          description: >
+              Max queue depth for sub handler.
+        - name: ib.pub_requests_per_sec
+          type: long
+          description: >
+              Number of requests per seconds in the Pub Handler queue.
+        - name: ib.pub_max_queue_depth
+          type: scaled_float
+          description: >
+              Max queue depth for pub handler.
+
+    - name: tcp_sockets
+      type: group
+      description: >
+         Server socket metrics.
+      fields:
+        - name: close_wait
+          type: integer
+          description: >
+              Socket connections in CLOSE_WAIT state.
+        - name: time_wait
+          type: integer
+          description: >
+              Socket connections in TIME_WAIT state.
+        - name: established
+          type: integer
+          description: >
+              Socket connections in ESTABLISHED state.
+        - name: fin_wait1
+          type: integer
+          description: >
+              Socket connections in FIN_WAIT1 state.
+        - name: fin_wait2
+          type: integer
+          description: >
+              Socket connections in FIN_WAIT2 state.

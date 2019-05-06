@@ -1,0 +1,350 @@
+---
+metrics:
+    - metricName: sessions_current
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA_,Location=PIA,Type=WebAppComponentRuntime,ApplicationRuntime=peoplesoft"
+      jmxAttrName: OpenSessionsCurrentCount
+
+    - metricName: sessions_high
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA_,Location=PIA,Type=WebAppComponentRuntime,ApplicationRuntime=peoplesoft"
+      jmxAttrName: OpenSessionsHighCount
+
+    - metricName: ib.plc.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: ib.plc.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: ib.plc.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: ib.service.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftServicesListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: ib.service.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftServicesListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: ib.service.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PeopleSoftServicesListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: ib.rest.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=RESTListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: ib.rest.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=RESTListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: ib.rest.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=RESTListeningConnector,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA*PSIGW"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: psp.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psp,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: psp.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psp,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: psp.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psp,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: psc.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psc,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: psc.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psc,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: psc.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=psc,ServerRuntime=PIA,Location=PIA,Type=ServletRuntime,ApplicationRuntime=peoplesoft,WebAppComponentRuntime=PIA_"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: all.exec_time_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PIA_,ServerRuntime=PIA,Location=PIA,Type=WebAppComponentRuntime,ApplicationRuntime=peoplesoft"
+      jmxAttrName: ExecutionTimeAverage
+
+    - metricName: all.exec_time_max
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PIA_,ServerRuntime=PIA,Location=PIA,Type=WebAppComponentRuntime,ApplicationRuntime=peoplesoft"
+      jmxAttrName: ExecutionTimeHigh
+
+    - metricName: all.request_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=PIA_,ServerRuntime=PIA,Location=PIA,Type=WebAppComponentRuntime,ApplicationRuntime=peoplesoft"
+      jmxAttrName: InvocationTotalCount
+
+    - metricName: pending_requests
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: PendingUserRequestCount
+
+    - metricName: overload_rejected_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: OverloadRejectedRequestsCount
+
+    - metricName: execute.total
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: ExecuteThreads
+
+    - metricName: queue_length
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: QueueLength
+
+    - metricName: requests_per_sec
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: Throughput
+
+    - metricName: hogging_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: HoggingThreadCount
+
+    - metricName: standby_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: StandbyThreadCount
+
+    - metricName: execute.idle
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: ExecuteThreadIdleCount
+
+    - metricName: stuck_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+      jmxAttrName: StuckThreadCount
+
+    # - metricName: thread_pool_health_state
+    #   role: weblogic
+    #   attrType: class
+    #   jmxClass: "com.bea:Name=ThreadPoolRuntime,ServerRuntime=PIA,Location=PIA,Type=ThreadPoolRuntime"
+    #   jmxAttrName: HealthState
+
+    - metricName: load
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=PIA,Location=PIA,Type=ServerRuntime"
+      jmxAttrName: Load
+
+    - metricName: health
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:Name=PIA,Location=PIA,Type=ServerRuntime"
+      jmxAttrName: Health
+
+    # - metricName: jolt_pool.session_avail_count
+    #   role: weblogic
+    #   attrType: sum
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltSessionPoolRuntime"
+    #   jmxAttrName: IsBusy
+
+    # - metricName: jolt_pool.session_in_use_count
+    #   role: weblogic
+    #   attrType: sum
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltSessionPoolRuntime"
+    #   jmxAttrName: IsBusy
+    #   attrWhere: "true"
+
+    - metricName: jolt.req_serialize_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: AverageRequestSerializationTime
+
+    - metricName: jolt.resp_deserize_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: AverageReplyDeserializaitonTime
+
+    - metricName: jolt.response_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: AverageResponseTime
+
+    - metricName: jolt.total_service_avg
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: AverageTotalServiceTime
+
+    - metricName: jolt.service_error_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: ServiceErrorCount
+
+    - metricName: jolt.requests_per_sec
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltServiceStatistics"
+      jmxAttrName: Throughput
+
+    - metricName: ps.web.jolt.sessions_available_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltSessionPoolRuntime"
+      jmxAttrName: SessionsAvailableCount
+
+    - metricName: ps.web.jolt.sessions_in_use_count
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=JoltSessionPoolRuntime"
+      jmxAttrName: SessionsInUseCount
+
+    - metricName: tcp.close_wait
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=HostNetworkStatistics"
+      jmxAttrName: TCPSocketsInCloseWaitState
+
+    - metricName: tcp.time_wait
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=HostNetworkStatistics"
+      jmxAttrName: TCPSocketsInTimeWaitState
+
+    - metricName: tcp.established
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=HostNetworkStatistics"
+      jmxAttrName: TCPSocketsInEstablishedState
+
+    - metricName: tcp.fin_wait1
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=HostNetworkStatistics"
+      jmxAttrName: TCPSocketsInFINWait1State
+
+    - metricName: tcp.fin_wait2
+      role: weblogic
+      attrType: class
+      jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=HostNetworkStatistics"
+      jmxAttrName: TCPSocketsInFINWait2State
+
+    # - metricName: ps.web.pn.web_socket_count
+    #   role: weblogic
+    #   attrType: class
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=PushNotificationWebServerRuntime"
+    #   jmxAttrName: WebSocketCount
+
+    # - metricName: ps.web.pn.jolt_connection_count
+    #   role: weblogic
+    #   attrType: class
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=PushNotificationWebServerRuntime"
+    #   jmxAttrName: JoltConnectionCount
+
+    # - metricName: ps.web.pn.failed_appserver_count
+    #   role: weblogic
+    #   attrType: class
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=PushNotificationWebServerRuntime"
+    #   jmxAttrName: FailedAppservercount
+
+    # - metricName: ps.web.pn.event_count
+    #   role: weblogic
+    #   attrType: class
+    #   jmxClass: "com.peoplesoft:ServerRuntime=PIA,Location=PIA,Type=PushNotificationWebServerRuntime"
+    #   jmxAttrName: EventCount
+
+    - metricName: jvm.heap_free_pct
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA,Location=PIA,Type=JVMRuntime"
+      jmxAttrName: HeapSizeMax
+
+    - metricName: jvm.heap_free_current
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA,Location=PIA,Type=JVMRuntime"
+      jmxAttrName: HeapFreePercent
+
+    - metricName: security.invalid_login_attempts
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA,Location=PIA,Type=ServerSecurityRuntime"
+      jmxAttrName: InvalidLoginAttemptsTotalCount
+
+    - metricName: security.current_locked_users
+      role: weblogic
+      attrType: class
+      jmxClass: "com.bea:ServerRuntime=PIA,Name=PIA,Location=PIA,Type=ServerSecurityRuntime"
+      jmxAttrName: LockedUsersCurrentCount
+
+    - metricName: jvm.process_cpu_load
+      role: weblogic
+      attrType: class
+      jmxClass: "java.lang:Location=PIA,type=OperatingSystem"
+      jmxAttrName: ProcessCpuLoad
+
+    - metricName: jvm.system_cpu_load
+      role: weblogic
+      attrType: class
+      jmxClass: "java.lang:Location=PIA,type=OperatingSystem"
+      jmxAttrName: SystemCpuLoad
+
+    - metricName: jvm.system_load_avg_1min
+      role: weblogic
+      attrType: class
+      jmxClass: "java.lang:Location=PIA,type=OperatingSystem"
+      jmxAttrName: SystemLoadAverage
