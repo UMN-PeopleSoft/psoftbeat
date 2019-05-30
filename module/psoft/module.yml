@@ -1,0 +1,15 @@
+dashboards:
+- id: d6fa8d50-6c62-11e9-9fb1-cf4b0b7b6233
+  file: psoftbeat-summary.json
+
+- id: 90aea3c0-6f4d-11e9-9fb1-cf4b0b7b6233
+  file: psoftbeat-AppEnv.json
+
+- id: e7983b60-7e39-11e9-a22b-1b4d7942c738
+  file: psoftbeat-AppDomains.json
+
+- id: eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233
+  file: psoftbeat-WebDomains.json
+
+- id: 9cd81950-7e67-11e9-a22b-1b4d7942c738
+  file: psoftbeat-Issues.json

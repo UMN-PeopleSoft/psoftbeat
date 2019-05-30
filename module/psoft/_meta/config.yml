@@ -1,7 +1,7 @@
 - module: psoft
-  metricsets: ["weblogic", "appserver", "scheduler"]
+  metricsets: ["stat"]
   enabled: true
-  period: 10s
+  period: 30s
   hosts: ["localhost"]
   pathInventoryFile: "domainList.csv"
   pathBlackoutFile: "blackoutList.csv"

@@ -1,4 +1,4 @@
-package weblogic
+package stat
 
 import (
 	"github.com/elastic/beats/libbeat/common"
@@ -7,10 +7,7 @@ import (
 	"fmt"
 	"github.com/UMN-PeopleSoft/psoftbeat/module/psoft"
 	"github.com/UMN-PeopleSoft/psoftjmx"
-)
 
-const (
-	metricSetType = "weblogic"
 )
 
 // init registers the MetricSet with the central registry as soon as the program
@@ -18,7 +15,7 @@ const (
 // the MetricSet for each host defined in the module's configuration. After the
 // MetricSet has been created then Fetch will begin to be called periodically.
 func init() {
-	mb.Registry.MustAddMetricSet("psoft", metricSetType, New)
+	mb.Registry.MustAddMetricSet("psoft", "stat", New)
 }
 
 // MetricSet holds any configuration or state information. It must implement
@@ -42,13 +39,13 @@ func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 }
 
 func (m *MetricSet) Fetch() ([]common.MapStr, error) {
-	// GetStats will start a queue/thread pool and load up all the current psoft targets
+	// FetchStats will start a queue/thread pool and load up all the current psoft targets
 	//   and run JMX Queries to the Nailgun server.
 	// global errors that fail all metric gathering will return in err return parameter.
 	// single errors for a specific event/target will be included in metric data and processed by eventMapping
-	metricData, err := psoft.FetchStats(m.JmxClient, "web")
+	metricData, err := psoft.FetchStats(m.JmxClient)
 	if err != nil {
-		return nil, fmt.Errorf("Failed fetching psoft %v Stats", metricSetType)
+		return nil, fmt.Errorf("Failed fetching psoft Stats")
 	}
 
 	return eventsMapping(metricData), nil

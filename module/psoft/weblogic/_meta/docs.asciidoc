@@ -1,1 +1,0 @@
-This is the weblogic metricset of the module psoft.

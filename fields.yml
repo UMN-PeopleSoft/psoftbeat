@@ -281,559 +281,511 @@
       type: group
       description: >
       fields:
-        - name: appserver
+        - name: stat
           type: group
           description: >
-            Captures PS App Server (Tuxedo) metrics for PeopleSoft environments
+            All PeopleSoft metric types
           fields:
             - name: domain_name
               type: keyword
               description: >
-                  Unique name of Peoplesoft domain when created.
+                 Unique name of Peoplesoft domain when created.
+            - name: app_domain_name_url
+              type: keyword
+              format: url
+              script: "return  doc['psoft.stat.domain_name'].value"
+              url_template: "../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:\"{{ value }}\"'))"
+              label_template: "{{ value }}"
+              open_link_in_current_tab: true
+            - name: web_domain_name_url
+              type: keyword
+              format: url
+              script: "return  doc['psoft.stat.domain_name'].value"
+              url_template: "../app/kibana#/dashboard/eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.domain_name:\"{{ value }}\"'))"
+              label_template: "{{ value }}"
+              open_link_in_current_tab: true
             - name: domain_type
               type: keyword
               description: >
-                  Type of PeopleSoft domain = app,web,prc.  These will be web.
+               Type of PeopleSoft domain = app,web,prc.  These will be web.
             - name: purpose
               type: keyword
               description: >
-                  Domain sub type = main(PIA), IB, REN, trace.
+                Domain sub type = main(PIA), IB, REN, trace.
+            - name: server_name
+              type: keyword
+              description: >
+                Process Scheduler server name, ie PSUNX, uniquely identifies multiple schedulers for one app/env.
             - name: app
               type: keyword
               description: >
-                  Valid application code = cs, fs, hr, ih, ln, cr representing the application the domain is for.
+                Valid application code = cs, fs, hr, ih, ln, cr representing the application the domain is for.
             - name: env
               type: keyword
               description: >
-                  Environment code for domain = dev, tst, qat, prd, trn, per, dmo ...etc.
+                Environment code for domain = dev, tst, qat, prd, trn, per, dmo ...etc.
+            - name: appenv
+              type: keyword
+              description: >
+                Combination of app and env, usually represents a DB
             - name: tools_version
               type: keyword
               description: >
-                  Current tools version of the domain.
+                Current tools version of the domain.
+            - name: weblogic_version
+              type: keyword
+              description: >
+                Current Weblgoic version for a web domain.
             - name: host
               type: keyword
               description: >
-                  Host where the domain is running
+                Host where the domain is running
             - name: health
               type: keyword
               description: >
-                  Current Health of PeopleSoft Weblogic domain
-                  Values = Ok, Warn, Critical, Failed, Overloaded, Down, Blackout
-            - name: load
+                Current Health of PeopleSoft Weblogic domain
+                Values - Ok, Warn, Critical, Failed, Overloaded, Down
+            - name: ps_load
               type: keyword
               description: >
-                  Current load of the Weblogic domain.  Calculated from the JVM/process CPU load.
-                  Values = Light (load < 0.5), Medium (0.5 > load < 0.8), High (load > 0.8)
-            - name: server_count
-              type: long
+                Current load of the domain. Calculated from the process CPU load.
+                Values - Light (load < 0.5), Medium (0.5 > load < 0.8), High (load > 0.8)
+            - name: status
+              type: keyword
               description: >
-                  Number of PSAPPSRV instances 
-            - name: server_down_count
-              type: long
-              description: >
-                  Number of PSAPPSRV instances currently down 
-            - name: client_count
-              type: long
-              description: >
-                  Number of Clients via JSH connected to domain. 
-            - name: long_running_request_count
-              type: long
-              description: >
-                  Number of PSAPPSRV requests running above average time 
-            - name: requests_total
-              type: long
-              description: >
-                  Number of requests from all PSAPPSRVs.
-            - name: reqests_avg
-              type: scaled_float
-              description: >
-                  Average number of requests per PSAPPSRV. 
-            - name: request_per_sec_total
-              type: scaled_float
-              description: >
-                  Requests per second for all PSAPPSRVs. 
-            - name: request_per_sec_avg
-              type: scaled_float
-              description: >
-                  Average requests per second for each PSAPPSRVs.
-            - name: psappsrv_active_pct
-              type: scaled_float
-              format: percent
-              description: >
-                  Percentage of PSAPPSRVs currently processing a request. 
-            - name: client_trans_aborted_count
-              type: long
-              description: >
-                  Number of client requests that threw a Jolt error. 
-            - name: request_process_time_ms_avg
-              type: scaled_float
-              description: >
-                  Average time required to complete a request. 
-            - name: request_service_time_ms_avg
-              type: scaled_float
-              description: >
-                  Average time required to complete the service handling of a request. 
-        
-            - name: cache
+                Current state of the target domain
+                Values - Up, Blackout, Excluded, Down, Configuration error with target
+            - name: appsrv
               type: group
               description: >
-                  Cache management in PS Appserver Domain
-              fields:
-                - name: memory_size_kb_total
-                  type: long
-                  description: >
-                      Cache memory used for all PSAPPSRVs (kb).
-                - name: memory_size_kb_avg
-                  type: scaled_float
-                  description: >
-                      Average cache memory used for each PSAPPSRV (kb).
-        
-            - name: queue
-              type: group
-              description: >
-                  Appserver Domain Queues metrics
+                Captures PS App Server (Tuxedo) metrics for PeopleSoft environments
               fields:
                 - name: server_count
                   type: long
                   description: >
-                      Number of queues.
-                - name: requests_per_sec
-                  type: scaled_float
-                  description: >
-                      Number of requests per second passed through the queue.
-                - name: depth
+                      Number of PSAPPSRV instances 
+                - name: server_down_count
                   type: long
                   description: >
-                      Number of requests currently queued.
-                - name: ib.sub_requests_per_sec
-                  type: scaled_float
-                  description: >
-                      Number of requests per seconds in the Sub Handler queue.
-                - name: ib.sub_max_queue_depth
-                  type: scaled_float
-                  description: >
-                      Max queue depth for sub handler.
-                - name: ib.pub_requests_per_sec
+                      Number of PSAPPSRV instances currently down 
+                - name: client_count
                   type: long
                   description: >
-                      Number of requests per seconds in the Pub Handler queue.
-                - name: ib.pub_max_queue_depth
+                      Number of Clients via JSH connected to domain. 
+                - name: long_running_request_count
+                  type: long
+                  description: >
+                      Number of PSAPPSRV requests running above average time 
+                - name: requests_total
+                  type: long
+                  description: >
+                      Number of requests from all PSAPPSRVs.
+                - name: reqests_avg
                   type: scaled_float
                   description: >
-                      Max queue depth for pub handler.
-        
-            - name: tcp_sockets
+                      Average number of requests per PSAPPSRV. 
+                - name: request_per_sec_total
+                  type: scaled_float
+                  description: >
+                      Requests per second for all PSAPPSRVs. 
+                - name: request_per_sec_avg
+                  type: scaled_float
+                  description: >
+                      Average requests per second for each PSAPPSRVs.
+                - name: active_pct
+                  type: scaled_float
+                  format: percent
+                  description: >
+                      Percentage of PSAPPSRVs currently processing a request. 
+                - name: client_trans_aborted_count
+                  type: long
+                  description: >
+                      Number of client requests that threw a Jolt error. 
+                - name: request_process_time_ms_avg
+                  type: scaled_float
+                  description: >
+                      Average time required to complete a request. 
+                - name: request_service_time_ms_avg
+                  type: scaled_float
+                  description: >
+                      Average time required to complete the service handling of a request. 
+                - name: cache
+                  type: group
+                  description: >
+                      Cache management in PS Appserver Domain
+                  fields:
+                    - name: memory_size_kb_total
+                      type: long
+                      description: >
+                          Cache memory used for all PSAPPSRVs (kb).
+                    - name: memory_size_kb_avg
+                      type: scaled_float
+                      description: >
+                          Average cache memory used for each PSAPPSRV (kb).
+            
+                - name: queue
+                  type: group
+                  description: >
+                      Appserver Domain Queues metrics
+                  fields:
+                    - name: server_count
+                      type: long
+                      description: >
+                          Number of queues.
+                    - name: requests_per_sec
+                      type: scaled_float
+                      description: >
+                          Number of requests per second passed through the queue.
+                    - name: depth
+                      type: long
+                      description: >
+                          Number of requests currently queued.
+                    - name: ib.sub_requests_per_sec
+                      type: scaled_float
+                      description: >
+                          Number of requests per seconds in the Sub Handler queue.
+                    - name: ib.sub_max_queue_depth
+                      type: scaled_float
+                      description: >
+                          Max queue depth for sub handler.
+                    - name: ib.pub_requests_per_sec
+                      type: long
+                      description: >
+                          Number of requests per seconds in the Pub Handler queue.
+                    - name: ib.pub_max_queue_depth
+                      type: scaled_float
+                      description: >
+                          Max queue depth for pub handler.
+            
+                - name: tcp
+                  type: group
+                  description: >
+                     Server socket metrics.
+                  fields:
+                    - name: close_wait
+                      type: integer
+                      description: >
+                          Socket connections in CLOSE_WAIT state.
+                    - name: time_wait
+                      type: integer
+                      description: >
+                          Socket connections in TIME_WAIT state.
+                    - name: established
+                      type: integer
+                      description: >
+                          Socket connections in ESTABLISHED state.
+                    - name: fin_wait1
+                      type: integer
+                      description: >
+                          Socket connections in FIN_WAIT1 state.
+                    - name: fin_wait2
+                      type: integer
+                      description: >
+                          Socket connections in FIN_WAIT2 state.
+            - name: web
               type: group
               description: >
-                 Server socket metrics.
+                Captures Weblogic metrics for PeopleSoft environments
               fields:
-                - name: close_wait
+                - name: sessions.current
                   type: integer
                   description: >
-                      Socket connections in CLOSE_WAIT state.
-                - name: time_wait
+                      Current sessions in Weblogic domain.
+                - name: sessions.high
                   type: integer
                   description: >
-                      Socket connections in TIME_WAIT state.
-                - name: established
-                  type: integer
+                      Peak sessions in Weblogic domain since start of instance.
+                - name: jolt
+                  type: group
                   description: >
-                      Socket connections in ESTABLISHED state.
-                - name: fin_wait1
-                  type: integer
+                    Metrics for the Jolt Client services connecting to App Servers.
+                  fields:
+                    - name: req_serialize_avg_ms
+                      type: scaled_float
+                      description: >
+                          Average time in milliseconds to serialize the request to app server via Jolt
+                    - name: resp_deserialize_avg_ms
+                      type: scaled_float
+                      description: >
+                          Average time in milliseconds to de-serialize the response from app server via Jolt.
+                    - name: response_avg_ms
+                      type: scaled_float
+                      description: >
+                          Average time in milliseconds for app server to respond to Jolt request.
+                    - name: total_service_avg_ms
+                      type: scaled_float
+                      description: >
+                          Average total time in milliseconds to process request to app server with serializing.
+                    - name: service_error_count
+                      type: long
+                      description: >
+                          Number of Jolt requests that returned in error, from either PSAPPSRV crashing or connectivity issues.
+                    - name: requests_per_sec
+                      type: scaled_float
+                      description: >
+                          Number of requests the web domain processe Jolt requests to app server, per second.
+            
+            
+                - name: jolt_pool
+                  type: group
                   description: >
-                      Socket connections in FIN_WAIT1 state.
-                - name: fin_wait2
-                  type: integer
+                    Metrics for the Jolt Session Pool with jolt_pooling is enable for connecting to App Servers.
+                  fields:
+                    - name: session.avail_count
+                      type: integer
+                      description: >
+                          Total sessions in the Pool ready for use.
+                    - name: session.in_use_count
+                      type: integer
+                      description: >
+                          Total sessions in the Pool that are currently in use.
+            
+            
+                - name: tcp
+                  type: group
                   description: >
-                      Socket connections in FIN_WAIT2 state.
-        - name: scheduler
-          type: group
-          description: >
-            Captures PS Scheduler Server (Tuxedo) metrics for PeopleSoft environments
-          fields:
-            - name: domain_name
-              type: keyword
-              description: >
-                  Unique name of Peoplesoft domain when created.
-            - name: domain_type
-              type: keyword
-              description: >
-                  Type of PeopleSoft domain = app,web,prc.  These will be web.
-            - name: purpose
-              type: keyword
-              description: >
-                  Domain sub type = main(PIA), IB, REN, trace.
-            - name: app
-              type: keyword
-              description: >
-                  Valid application code = cs, fs, hr, ih, ln, cr representing the application the domain is for.
-            - name: env
-              type: keyword
-              description: >
-                  Environment code for domain = dev, tst, qat, prd, trn, per, dmo ...etc.
-            - name: tools_version
-              type: keyword
-              description: >
-                  Current tools version of the domain.
-            - name: server_name
-              type: keyword
-              description: >
-                  Unique server name for a process scheduler domain. ie. PSUNX  Does not apply for web domains.
-            - name: host
-              type: keyword
-              description: >
-                  Host where the domain is running
-            - name: health
-              type: keyword
-              description: >
-                  Current Health of PeopleSoft Weblogic domain
-                  Values = Ok, Warn, Critical, Failed, Overloaded, Down, Blackout
-            - name: load
-              type: keyword
-              description: >
-                  Current load of the Weblogic domain.  Calculated from the JVM/process CPU load.
-                  Values = Light (load < 0.5), Medium (0.5 > load < 0.8), High (load > 0.8)
-            - name: server_count
-              type: long
-              description: >
-                  Number of PSAPPSRV instances 
-            - name: server_down_count
-              type: long
-              description: >
-                  Number of PSAPPSRV instances currently down 
-            - name: requests_total
-              type: long
-              description: >
-                  Number of requests from all PSAPPSRVs.
+                     Server socket metrics.
+                  fields:
+                    - name: close_wait
+                      type: integer
+                      description: >
+                          Socket connections in CLOSE_WAIT state.
+                    - name: time_wait
+                      type: integer
+                      description: >
+                          Socket connections in TIME_WAIT state.
+                    - name: established
+                      type: integer
+                      description: >
+                          Socket connections in ESTABLISHED state.
+                    - name: fin_wait1
+                      type: integer
+                      description: >
+                          Socket connections in FIN_WAIT1 state.
+                    - name: fin_wait2
+                      type: integer
+                      description: >
+                          Socket connections in FIN_WAIT2 state.
+            
+            
+                - name: thread_pool
+                  type: group
+                  description: >
+                     Weblogic Thread Pool Metrics for handing http requests.
+                  fields:
+                    - name: queue_length
+                      type: integer
+                      description: >
+                          The number of pending requests in the priority queue. 
+                          This is the total of internal system requests and user requests.
+                    - name: pending_requests
+                      type: integer
+                      description: >
+                          The number of pending user requests in the priority queue. 
+                          This is just the count of all user requests
+                    - name: standby_count
+                      type: integer
+                      description: >
+                          The number of threads in the standby pool. 
+                          Threads that are not needed to handle the present work load are designated as standby and added to the standby pool. 
+                          These threads are activated when more threads are needed.
+                    - name: execute.total
+                      type: integer
+                      description: >
+                          The total number of threads in the pool.
+                    - name: execute.idle
+                      type: integer
+                      description: >
+                          The number of idle threads in the pool. This count does not include standby threads and stuck threads. 
+                          The count indicates threads that are ready to pick up new work when it arrives.
+                    - name: hogging_count
+                      type: integer
+                      description: >
+                          The threads that are being held by a request right now. 
+                          These threads will either be declared as stuck after the configured timeout or will return to the pool before that. 
+                          The self-tuning mechanism will backfill if necessary.
+                    - name: stuck_count
+                      type: integer
+                      description: >
+                          The number of threads running a request for over 5 mins.  Someone running a bad query? DB locking?
+                    - name: overload_rejected
+                      type: integer
+                      description: >
+                          Number of requests rejected due to configured Shared Capacity for work managers have been reached.
+                          Default = 65536
+                    - name: requests_per_sec
+                      type: scaled_float
+                      description: >
+                          Number of requests per second the thread pool is handling.
+                    - name: health_state
+                      type: keyword
+                      description: >
+                          Health state of the thread pool.  Values = Ok, Warning, Critical, Failed, Overloaded
+            
+                - name: pn
+                  type: group
+                  description: >
+                     Push Notification - Web Socket metrics.
+                  fields:
+                    - name: web_socket_count
+                      type: long
+                      description: >
+                          Current number of Web Sockets opened.
+                    - name: jolt_connection_count
+                      type: long
+                      description: >
+                          Current number of Web Sockets connected to a jolt session.
+                    - name: failed_appserver_count
+                      type: long
+                      description: >
+                          Failed connections for Web Sockets to app server.
+                    - name: event_count
+                      type: long
+                      description: >
+                          Number of events (Push Notifications) fired through the web socket.
         
-            - name: cache
+                - name: security
+                  type: group
+                  description: >
+                     Weblogic Security metrics.
+                  fields:
+                    - name: invalid_login_attempts
+                      type: long
+                      description: >
+                          Number of failed login attempts to Weblogic services, like system user.
+                    - name: current_locked_users
+                      type: long
+                      description: >
+                          Number of Weblogic (my-realm) users that are currnetly locked.
+        
+                - name: jvm
+                  type: group
+                  description: >
+                     JVM Metrics for Weblogic instance.
+                  fields:
+                    - name: process_cpu_load
+                      type: scaled_float
+                      description: >
+                          CPU Load for only the Weblogic process.
+                    - name: system_cpu_load
+                      type: scaled_float
+                      description: >
+                          CPU Load for the system/OS.
+                    - name: system_load_avg_1min
+                      type: scaled_float
+                      description: >
+                          System CPU load average for the last 1 minute. As commonly seen in top
+                    - name: heap_free_pct
+                      type: integer
+                      description: >
+                          Percent of JVM Heap memory free.
+                    - name: heap_free_current
+                      type: long
+                      format: bytes
+                      description: >
+                          Bytes of JVM Heap memory free.
+            
+            
+                - name: servlets
+                  type: group
+                  description: >
+                     Metrics for specific peoplesoft servlets.
+                  fields:
+                    - name: all.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for all servlet types in milliseconds.
+                    - name: all.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for all servlet types in milliseconds.
+                    - name: all.request_count
+                      type: long
+                      description: >
+                          Request count since startup for all servlet types.
+                    - name: psp.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for the psp servlet in milliseconds.
+                    - name: psp.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for the psp servlet in milliseconds.
+                    - name: psp.request_count
+                      type: long
+                      description: >
+                          Request count since startup for the psp servlet.
+                    - name: psc.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for the psc servlet in milliseconds.
+                    - name: psc.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for the psc servlet in milliseconds.
+                    - name: psc.request_count
+                      type: long
+                      description: >
+                          Request count since startup for the psc servlet.
+                    - name: ib_rest.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for the PSIGW servlet, for PeoplesoftRESTListeningConnector in milliseconds.
+                    - name: ib_rest.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for the PSIGW servlet, for PeoplesoftRESTListeningConnector in milliseconds.
+                    - name: ib_rest.request_count
+                      type: long
+                      description: >
+                          Request count since startup for the PSIGW servlet, for PeoplesoftRESTListeningConnector.
+                    - name: ib_service.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for the PSIGW servlet, for PeoplesoftServiceListeningConnector in milliseconds.
+                    - name: ib_service.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for the PSIGW servlet, for PeoplesoftServiceListeningConnector in milliseconds.
+                    - name: ib_service.request_count
+                      type: long
+                      description: >
+                          Request count since startup for the PSIGW servlet, for PeoplesoftServiceListeningConnector.
+                    - name: ib_plc.exec_time_avg
+                      type: scaled_float
+                      description: >
+                          Average execution time for the PSIGW servlet, for PeoplesoftListeningConnector in milliseconds.
+                    - name: ib_plc.exec_time_max
+                      type: scaled_float
+                      description: >
+                          Highest execution time for the PSIGW servlet, for PeoplesoftListeningConnector in milliseconds.
+                    - name: ib_plc.request_count
+                      type: long
+                      description: >
+                          Request count since startup for the PSIGW servlet, for PeoplesoftListeningConnector.
+             
+            - name: prc
               type: group
               description: >
-                  Cache management in PS Appserver Domain
+                Captures PS Scheduler Server (Tuxedo) metrics for PeopleSoft environments
               fields:
-                - name: memory_size_kb_total
+                - name: server_count
                   type: long
                   description: >
-                      Cache memory used for all PSAPPSRVs (kb).
-        
-            - name: tcp_sockets
-              type: group
-              description: >
-                 Server socket metrics.
-              fields:
-                - name: close_wait
-                  type: integer
-                  description: >
-                      Socket connections in CLOSE_WAIT state.
-                - name: time_wait
-                  type: integer
-                  description: >
-                      Socket connections in TIME_WAIT state.
-                - name: established
-                  type: integer
-                  description: >
-                      Socket connections in ESTABLISHED state.
-                - name: fin_wait1
-                  type: integer
-                  description: >
-                      Socket connections in FIN_WAIT1 state.
-                - name: fin_wait2
-                  type: integer
-                  description: >
-                      Socket connections in FIN_WAIT2 state.
-        - key: weblogic
-          title: "Weblogic Domain"
-          description: >
-            Captures Weblogic metrics for PeopleSoft environments
-          fields:
-            - name: domain_name
-              type: keyword
-              description: >
-                  Unique name of Peoplesoft domain when created.
-            - name: domain_type
-              type: keyword
-              description: >
-                  Type of PeopleSoft domain = app,web,prc.  These will be web.
-            - name: purpose
-              type: keyword
-              description: >
-                  Domain sub type = main(PIA), IB, REN, trace.
-            - name: app
-              type: keyword
-              description: >
-                  Valid application code = cs, fs, hr, ih, ln, cr representing the application the domain is for.
-            - name: env
-              type: keyword
-              description: >
-                  Environment code for domain = dev, tst, qat, prd, trn, per, dmo ...etc.
-            - name: tools_version
-              type: keyword
-              description: >
-                  Current tools version of the domain.
-            - name: weblogic_version
-              type: keyword
-              description: >
-                  Current Weblogic version of the domain.
-            - name: server_name
-              type: keyword
-              description: >
-                  Unique server name for a process scheduler domain. ie. PSUNX  Does not apply for web domains.
-            - name: host
-              type: keyword
-              description: >
-                  Host where the domain is running
-            - name: health
-              type: keyword
-              description: >
-                  Current Health of PeopleSoft Weblogic domain
-                  Values = Ok, Warn, Critical, Failed, Overloaded, Down, Blackout
-            - name: load
-              type: keyword
-              description: >
-                  Current load of the Weblogic domain.  Calculated from the JVM/process CPU load.
-                  Values = Light (load < 0.5), Medium (0.5 > load < 0.8), High (load > 0.8)
-            - name: sessions.current
-              type: integer
-              description: >
-                  Current sessions in Weblogic domain.
-            - name: sessions.high
-              type: integer
-              description: >
-                  Peak sessions in Weblogic domain since start of instance.
-        
-        
-            - name: jolt_service
-              type: group
-              description: >
-                Metrics for the Jolt Client services connecting to App Servers.
-              fields:
-                - name: req_serialize_avg_ms
-                  type: scaled_float
-                  description: >
-                      Average time in milliseconds to serialize the request to app server via Jolt
-                - name: resp_deserialize_avg_ms
-                  type: scaled_float
-                  description: >
-                      Average time in milliseconds to de-serialize the response from app server via Jolt.
-                - name: response_avg_ms
-                  type: scaled_float
-                  description: >
-                      Average time in milliseconds for app server to respond to Jolt request.
-                - name: total_service_avg_ms
-                  type: scaled_float
-                  description: >
-                      Average total time in milliseconds to process request to app server with serializing.
-                - name: service_error_count
+                      Number of server instances for scheduler domain
+             
+                - name: requests_total
                   type: long
                   description: >
-                      Number of Jolt requests that returned in error, from either PSAPPSRV crashing or connectivity issues.
-                - name: requests_per_sec
-                  type: scaled_float
+                      Number of requests from all PSAPPSRVs.
+             
+                - name: cache
+                  type: group
                   description: >
-                      Number of requests the web domain processe Jolt requests to app server, per second.
-        
-        
-            - name: jolt_session_pool
-              type: group
-              description: >
-                Metrics for the Jolt Session Pool with jolt_pooling is enable for connecting to App Servers.
-              fields:
-                - name: session.avail_count
-                  type: integer
-                  description: >
-                      Total sessions in the Pool ready for use.
-                - name: session.in_use_count
-                  type: integer
-                  description: >
-                      Total sessions in the Pool that are currently in use.
-        
-        
-            - name: tcp_sockets
-              type: group
-              description: >
-                 Server socket metrics.
-              fields:
-                - name: close_wait
-                  type: integer
-                  description: >
-                      Socket connections in CLOSE_WAIT state.
-                - name: time_wait
-                  type: integer
-                  description: >
-                      Socket connections in TIME_WAIT state.
-                - name: established
-                  type: integer
-                  description: >
-                      Socket connections in ESTABLISHED state.
-                - name: fin_wait1
-                  type: integer
-                  description: >
-                      Socket connections in FIN_WAIT1 state.
-                - name: fin_wait2
-                  type: integer
-                  description: >
-                      Socket connections in FIN_WAIT2 state.
-        
-        
-            - name: thread_pool
-              type: group
-              description: >
-                 Weblogic Thread Pool Metrics for handing http requests.
-              fields:
-                - name: queue_length
-                  type: integer
-                  description: >
-                      The number of pending requests in the priority queue. 
-                      This is the total of internal system requests and user requests.
-                - name: pending_requests
-                  type: integer
-                  description: >
-                      The number of pending user requests in the priority queue. 
-                      This is just the count of all user requests
-                - name: standby_count
-                  type: integer
-                  description: >
-                      The number of threads in the standby pool. 
-                      Threads that are not needed to handle the present work load are designated as standby and added to the standby pool. 
-                      These threads are activated when more threads are needed.
-                - name: execute.total
-                  type: integer
-                  description: >
-                      The total number of threads in the pool.
-                - name: execute.idle
-                  type: integer
-                  description: >
-                      The number of idle threads in the pool. This count does not include standby threads and stuck threads. 
-                      The count indicates threads that are ready to pick up new work when it arrives.
-                - name: hogging_count
-                  type: integer
-                  description: >
-                      The threads that are being held by a request right now. 
-                      These threads will either be declared as stuck after the configured timeout or will return to the pool before that. 
-                      The self-tuning mechanism will backfill if necessary.
-                - name: stuck_count
-                  type: integer
-                  description: >
-                      The number of threads running a request for over 5 mins.  Someone running a bad query? DB locking?
-                - name: overload_rejected
-                  type: integer
-                  description: >
-                      Number of requests rejected due to configured Shared Capacity for work managers have been reached.
-                      Default = 65536
-                - name: requests_per_sec
-                  type: scaled_float
-                  description: >
-                      Number of requests per second the thread pool is handling.
-                - name: health_state
-                  type: keyword
-                  description: >
-                      Health state of the thread pool.  Values = Ok, Warning, Critical, Failed, Overloaded
-        
-        
-            - name: jvm
-              type: group
-              description: >
-                 JVM Metrics for Weblogic instance.
-              fields:
-                - name: process.cpu_load
-                  type: scaled_float
-                  description: >
-                      CPU Load for only the Weblogic process.
-                - name: system.cpu_load
-                  type: scaled_float
-                  description: >
-                      CPU Load for the system/OS.
-                - name: system.load_avg_1min
-                  type: scaled_float
-                  description: >
-                      System CPU load average for the last 1 minute. As commonly seen in top
-                - name: heap_free.pct
-                  type: integer
-                  description: >
-                      Percent of JVM Heap memory free.
-                - name: heap_free.current
-                  type: long
-                  format: bytes
-                  description: >
-                      Bytes of JVM Heap memory free.
-        
-        
-            - name: servlets
-              type: group
-              description: >
-                 Metrics for specific peoplesoft servlets.
-              fields:
-                - name: all.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for all servlet types in milliseconds.
-                - name: all.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for all servlet types in milliseconds.
-                - name: all.request_count
-                  type: long
-                  description: >
-                      Request count since startup for all servlet types.
-                - name: psp.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for the psp servlet in milliseconds.
-                - name: psp.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for the psp servlet in milliseconds.
-                - name: psp.request_count
-                  type: long
-                  description: >
-                      Request count since startup for the psp servlet.
-                - name: psc.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for the psc servlet in milliseconds.
-                - name: psc.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for the psc servlet in milliseconds.
-                - name: psc.request_count
-                  type: long
-                  description: >
-                      Request count since startup for the psc servlet.
-                - name: ib_rest.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for the PSIGW servlet, for PeoplesoftRESTListeningConnector in milliseconds.
-                - name: ib_rest.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for the PSIGW servlet, for PeoplesoftRESTListeningConnector in milliseconds.
-                - name: ib_rest.request_count
-                  type: long
-                  description: >
-                      Request count since startup for the PSIGW servlet, for PeoplesoftRESTListeningConnector.
-                - name: ib_service.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for the PSIGW servlet, for PeoplesoftServiceListeningConnector in milliseconds.
-                - name: ib_service.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for the PSIGW servlet, for PeoplesoftServiceListeningConnector in milliseconds.
-                - name: ib_service.request_count
-                  type: long
-                  description: >
-                      Request count since startup for the PSIGW servlet, for PeoplesoftServiceListeningConnector.
-                - name: ib_plc.exec_time_avg
-                  type: scaled_float
-                  description: >
-                      Average execution time for the PSIGW servlet, for PeoplesoftListeningConnector in milliseconds.
-                - name: ib_plc.exec_time_max
-                  type: scaled_float
-                  description: >
-                      Highest execution time for the PSIGW servlet, for PeoplesoftListeningConnector in milliseconds.
-                - name: ib_plc.request_count
-                  type: long
-                  description: >
-                      Request count since startup for the PSIGW servlet, for PeoplesoftListeningConnector.
-        
+                      Cache management in PS Appserver Domain
+                  fields:
+                    - name: memory_size_kb_total
+                      type: long
+                      description: >
+                          Cache memory used for all PSAPPSRVs (kb).
+             

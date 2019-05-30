@@ -1,1 +1,0 @@
-This is the scheduler metricset of the module psoft.

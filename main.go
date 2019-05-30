@@ -5,6 +5,7 @@ import (
 
 	"github.com/elastic/beats/libbeat/cmd/instance"
 	"github.com/elastic/beats/metricbeat/beater"
+	"github.com/elastic/beats/libbeat/cfgfile"
 
 	// Comment out the following line to exclude all official metricbeat modules and metricsets
 	//_ "github.com/elastic/beats/metricbeat/include"
@@ -17,9 +18,8 @@ var settings = instance.Settings{
 	Name: "psoftbeat",
 }
 
-var Name = "psoftbeat"
-
 func main() {
+	_ = cfgfile.ChangeDefaultCfgfileFlag(settings.Name)
 	if err := instance.Run(settings, beater.DefaultCreator()); err != nil {
 		os.Exit(1)
 	}

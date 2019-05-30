@@ -49,7 +49,7 @@ psoftbeat.modules:
 
 #------------------------ PeopleSoft Metricbeat Module -----------------------
 - module: psoft
-  metricsets: ["weblogic"]
+  metricsets: ["stat"]
   enabled: true
   period: 30s
   # metrics always ran locally, the PSoft JMX Library will handle remote targets through custom configs
@@ -62,7 +62,7 @@ psoftbeat.modules:
   # Path to a list of domain names in blackout state, will mark target as blackout instead of down or alerting.
   # Maintain this file with your operations scripts for stop/start.  Metricbeat will reload list for every metric capture.
   pathBlackoutFile: "blackoutList_example.csv"
-  # Path to a list of domains to exclude.  if you run domains in standby and shutdown, add to this list.  
+  # Path to a list of domains to exclude.  if you run domains in standby and shutdown, add to this list.
   # Monitoring will be ignored for these targets.  Useful if you domain list/inventory may include these targets.
   pathExclusionFile: "exclusionList_example.csv"
   # Prebuilt JMX attribute to metric configurations for each metricset.  No need to change
@@ -73,7 +73,7 @@ psoftbeat.modules:
   javaPath: "/psoft/admin/software/java/jdk1.8.0_141/jre"
   # Debugging support, defaults to INFO
   #logLevel:
-  # Number of concurrent workers to pull metrics for a target.  
+  # Number of concurrent workers to pull metrics for a target.
   # Default is 5, adjust based on size of host and number of total targets/domains.
   #concurrentWorkers:
   # Conntect string to nailgun server. This uses a UNIX socket.  Defaults to: "local:/tmp/psmetric.socket"

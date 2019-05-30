@@ -1,26 +1,25 @@
 ---
 metrics:
-    - metricName: PrcAllServerCount
-      role: prc
+    - metricName: health
+      role: app
       attrType: class
-      jmxClass: "com.peoplesoft:Name=acsumn1,Type=DomainRuntime"
-      jmxAttrName: ServerCount
-
-    - metricName: PrcHealth
-      role: prc
-      attrType: class
-      jmxClass: "com.peoplesoft:Name=acsumn1,Type=DomainRuntime"
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
       jmxAttrName: Health
 
-    - metricName: PrcLoadState
-      role: prc
+    - metricName: ps_load
+      role: app
       attrType: class
-      jmxClass: "com.peoplesoft:Name=acsumn1,Type=DomainRuntime"
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
       jmxAttrName: Load
 
-
-    - metricName: TotalRequestCount
+    - metricName: prc.server_count
       role: prc
       attrType: class
-      jmxClass: "com.peoplesoft:DomainRuntime=acsumn1,Type=TuxedoServerRuntime,Name=PSAESRV_*"
+      jmxClass: "com.peoplesoft:Name=*,Type=DomainRuntime"
+      jmxAttrName: ServerCount
+
+    - metricName: prc.requests_total
+      role: prc
+      attrType: class
+      jmxClass: "com.peoplesoft:DomainRuntime=*,Type=TuxedoServerRuntime,Name=PSAESRV_*"
       jmxAttrName: TotalRequestCount

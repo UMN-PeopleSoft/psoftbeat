@@ -66,10 +66,9 @@ func GetPsoftJMXClient() *psoftjmx.PsoftJmxClient {
 }
 
 // FetchStats all psoft metric data for specific domains for the metricset Type
-func FetchStats(client *psoftjmx.PsoftJmxClient, metricSetType string) ([]map[string]string, error) {
+func FetchStats(client *psoftjmx.PsoftJmxClient) ([]map[string]interface{}, error) {
 
 	// now get all the metrics for the filtered targets
-	psoftMetrics, err := client.GetMetrics(metricSetType)
-
+	psoftMetrics, err := client.GetMetrics()
 	return psoftMetrics, err
 }

@@ -1,0 +1,2 @@
+This is the stat metricset of the module psoft.  
+This metricset will capture metrics for Weblogic, PeopleSoft App Server and Scheduler.

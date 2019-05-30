@@ -1,5 +1,5 @@
 - module: psoft
-  metricsets: ["weblogic", "appserver", "scheduler"]
+  metricsets: ["stat"]
   enabled: true
   period: 30s
   # metrics always ran locally, the PSoft JMX Library will handle remote targets through custom configs

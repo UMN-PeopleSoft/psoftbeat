@@ -27,7 +27,5 @@ package include
 
 import (
 	_ "github.com/UMN-PeopleSoft/psoftbeat/module/psoft"
-	_ "github.com/UMN-PeopleSoft/psoftbeat/module/psoft/appserver"
-	_ "github.com/UMN-PeopleSoft/psoftbeat/module/psoft/scheduler"
-	_ "github.com/UMN-PeopleSoft/psoftbeat/module/psoft/weblogic"
+	_ "github.com/UMN-PeopleSoft/psoftbeat/module/psoft/stat"
 )
