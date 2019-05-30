@@ -1,6 +1,8 @@
 # Directories
 build
-logs
+logs/*.log
+logs/nail*
+logs/psoft*
 data
 vendor
 docs
