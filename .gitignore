@@ -13,3 +13,5 @@ nailgun.log*
 psoftjmx.log
 psoftbeat
 logging.properties
+wlthint3client.jar
+!vendor/github.com/elastic/beats/dev-tools/packaging/packages.yml
