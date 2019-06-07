@@ -11,14 +11,18 @@
       type: keyword
       format: url
       script: "return  doc['psoft.stat.domain_name'].value"
-      url_template: "../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:\"{{ value }}\"'))"
+      url_template: 
+        - min_version: "1.0.0"
+          value: ../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:"{{ value }}"'))
       label_template: "{{ value }}"
       open_link_in_current_tab: true
     - name: web_domain_name_url
       type: keyword
       format: url
       script: "return  doc['psoft.stat.domain_name'].value"
-      url_template: "../app/kibana#/dashboard/eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.domain_name:\"{{ value }}\"'))"
+      url_template: 
+        - min_version: "1.0.0"
+          value: ../app/kibana#/dashboard/eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.domain_name:"{{ value }}"'))
       label_template: "{{ value }}"
       open_link_in_current_tab: true
     - name: domain_type

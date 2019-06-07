@@ -8,13 +8,13 @@
   # Path to a list of targets using a space separated 'csv' format, see example domain list file.
   # All targets you want to monitor.  Maintain the list with your operational scripts to add domain to list when it is created/deleted.
   # Metricbeat will re-load this list for every metric capture to automatically monitor new domains as they are created.
-  pathInventoryFile: "domainList_example.csv"
+  pathInventoryFile: "domainList.csv"
   # Path to a list of domain names in blackout state, will mark target as blackout instead of down or alerting.
   # Maintain this file with your operations scripts for stop/start.  Metricbeat will reload list for every metric capture.
-  pathBlackoutFile: "blackoutList_example.csv"
+  pathBlackoutFile: "blackoutList.csv"
   # Path to a list of domains to exclude.  if you run domains in standby and shutdown, add to this list.
   # Monitoring will be ignored for these targets.  Useful if you domain list/inventory may include these targets.
-  pathExclusionFile: "exclusionList_example.csv"
+  pathExclusionFile: "exclusionList.csv"
   # Prebuilt JMX attribute to metric configurations for each metricset.  No need to change
   attribWebMetrics: "web_metric.yaml"
   attribAppMetrics: "app_metric.yaml"

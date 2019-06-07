@@ -172,6 +172,9 @@ shared:
     prc_metric.yaml:
       source: '{{ repo.RootDir }}/prc_metric.yaml'
       mode: 0644
+    logs/beat_logs.txt:
+      source: '{{ repo.RootDir }}/logs/beat_logs.txt'
+      mode: 0740
 
     .build_hash.txt:
       content: >
