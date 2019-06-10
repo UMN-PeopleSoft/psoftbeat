@@ -68,7 +68,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "AppEnv: Web Server List [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -84,7 +84,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "AppEnv: App Server List [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -116,7 +116,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "AppEnv: Scheduler List [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -132,7 +132,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "AppEnv: Web Thread Metrics [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 

@@ -35,10 +35,10 @@ configs: python-env
 	@cat ${ES_BEATS}/metricbeat/_meta/setup.yml >> _meta/beat.yml
 	@cat ${ES_BEATS}/metricbeat/_meta/common.reference.yml > _meta/beat.reference.yml
 	@${PYTHON_ENV}/bin/python ${ES_BEATS}/script/config_collector.py --beat ${BEAT_NAME} --full $(PWD) >> _meta/beat.reference.yml
+	@sed -i -e "s///"  _meta/beat.reference.yml
 	@rm -rf modules.d
 	${PYTHON_ENV}/bin/python ${ES_BEATS}/metricbeat/scripts/modules_collector.py --docs_branch=$(DOCS_BRANCH)
 	@chmod go-w modules.d/*
-	@echo "\nsetup.dashboards.enabled: true\n\npsoftbeat.modules:" >> _meta/beat.yml
 	@cat modules.d/*.yml.disabled >> _meta/beat.yml
 	@# Enable system by default:
 	@if [ -f modules.d/system.yml.disabled ]; then mv modules.d/system.yml.disabled modules.d/system.yml; fi

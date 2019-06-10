@@ -20,7 +20,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Web Thread Metrics [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -36,7 +36,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Web Jolt Metrics [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -84,7 +84,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Domain Load [psoftbeat]", 
                 "uiStateJSON": "{}", 
@@ -100,7 +100,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Domain Health [psoftbeat]", 
                 "uiStateJSON": "{}", 
@@ -116,7 +116,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Domain Name [psoftbeat]", 
                 "uiStateJSON": "{}", 
@@ -132,7 +132,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Web JVM-OS [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}", 
@@ -148,7 +148,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Detail: Web Sessions Metric [psoftbeat]", 
                 "uiStateJSON": "{}", 

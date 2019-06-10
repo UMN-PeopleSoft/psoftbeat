@@ -20,7 +20,7 @@
             "attributes": {
                 "description": "", 
                 "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"filter\": [], \"index\": \"3a525410-7f86-11e9-a22b-1b4d7942c738\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                    "searchSourceJSON": "{\"filter\": [], \"index\": \"psoftbeat-*\", \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
                 }, 
                 "title": "Issues: Problem Targets [psoftbeat]", 
                 "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 2, \"direction\": \"asc\"}}}}", 
