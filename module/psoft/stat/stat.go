@@ -31,11 +31,15 @@ type MetricSet struct {
 // any MetricSet specific configuration options if there are any.
 func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 
+	config := struct{}{}
+	if err := base.Module().UnpackConfig(&config); err != nil {
+		return nil, err
+	}
+
 	return &MetricSet{
 		BaseMetricSet: base,
 		JmxClient:     psoft.GetPsoftJMXClient(),
 	}, nil
-
 }
 
 func (m *MetricSet) Fetch() ([]common.MapStr, error) {

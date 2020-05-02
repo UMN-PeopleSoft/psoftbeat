@@ -33,30 +33,6 @@ shared:
       /usr/share/{{.BeatName}}/NOTICE.txt:
         source: '{{ repo.RootDir }}/NOTICE.txt'
         mode: 0644
-      /usr/bin/JMXQuery-1.0-SNAPSHOT.jar:
-        source: '{{ repo.RootDir }}/JMXQuery-1.0-SNAPSHOT.jar'
-        mode: 0644
-      /usr/bin/nailgun-server-1.0.0-SNAPSHOT-uber.jar:
-        source: '{{ repo.RootDir }}/nailgun-server-1.0.0-SNAPSHOT-uber.jar'
-        mode: 0744
-      /usr/share/{{.BeatName}}/blackoutList.csv_sample:
-        source: '{{ repo.RootDir }}/blackoutList.csv_sample'
-        mode: 0644
-      /usr/share/{{.BeatName}}/exclusionList.csv_sample:
-        source: '{{ repo.RootDir }}/exclusionList.csv_sample'
-        mode: 0644
-      /usr/share/{{.BeatName}}/domainList.csv_sample:
-        source: '{{ repo.RootDir }}/domainList.csv_sample'
-        mode: 0644
-      /etc/{{.BeatName}}/app_metric.yaml:
-        source: '{{ repo.RootDir }}/app_metric.yaml'
-        mode: 0644
-      /etc/{{.BeatName}}/web_metric.yaml:
-        source: '{{ repo.RootDir }}/web_metric.yaml'
-        mode: 0644
-      /etc/{{.BeatName}}/prc_metric.yaml:
-        source: '{{ repo.RootDir }}/prc_metric.yaml'
-        mode: 0644
       /usr/share/{{.BeatName}}/README.md:
         template: '{{ elastic_beats_dir }}/dev-tools/packaging/templates/common/README.md.tmpl'
         mode: 0644
@@ -148,34 +124,6 @@ shared:
     README.md:
       template: '{{ elastic_beats_dir }}/dev-tools/packaging/templates/common/README.md.tmpl'
       mode: 0644
-    JMXQuery-1.0-SNAPSHOT.jar:
-      source: '{{ repo.RootDir }}/JMXQuery-1.0-SNAPSHOT.jar'
-      mode: 0644
-    nailgun-server-1.0.0-SNAPSHOT-uber.jar:
-      source: '{{ repo.RootDir }}/nailgun-server-1.0.0-SNAPSHOT-uber.jar'
-      mode: 0744
-    blackoutList.csv_sample:
-      source: '{{ repo.RootDir }}/blackoutList.csv_sample'
-      mode: 0644
-    exclusionList.csv_sample:
-      source: '{{ repo.RootDir }}/exclusionList.csv_sample'
-      mode: 0644
-    domainList.csv_sample:
-      source: '{{ repo.RootDir }}/domainList.csv_sample'
-      mode: 0644
-    app_metric.yaml:
-      source: '{{ repo.RootDir }}/app_metric.yaml'
-      mode: 0644
-    web_metric.yaml:
-      source: '{{ repo.RootDir }}/web_metric.yaml'
-      mode: 0644
-    prc_metric.yaml:
-      source: '{{ repo.RootDir }}/prc_metric.yaml'
-      mode: 0644
-    logs/beat_logs.txt:
-      source: '{{ repo.RootDir }}/logs/beat_logs.txt'
-      mode: 0740
-
     .build_hash.txt:
       content: >
         {{ commit }}
@@ -402,7 +350,7 @@ specs:
         <<: *elastic_license_for_binaries
         files:
           '{{.BeatName}}{{.BinaryExt}}':
-            source: ../x-pack/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
+            source: ./{{.XPackDir}}/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
 
     - os: darwin
       types: [tgz]
@@ -411,7 +359,7 @@ specs:
         <<: *elastic_license_for_binaries
         files:
           '{{.BeatName}}{{.BinaryExt}}':
-            source: ../x-pack/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
+            source: ./{{.XPackDir}}/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
 
     - os: darwin
       types: [dmg]
@@ -430,7 +378,7 @@ specs:
         <<: *elastic_license_for_binaries
         files:
           '{{.BeatName}}{{.BinaryExt}}':
-            source: ../x-pack/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
+            source: ./{{.XPackDir}}/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
 
     - os: linux
       types: [deb, rpm]
@@ -439,7 +387,7 @@ specs:
         <<: *elastic_license_for_deb_rpm
         files:
           /usr/share/{{.BeatName}}/bin/{{.BeatName}}{{.BinaryExt}}:
-            source: ../x-pack/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
+            source: ./{{.XPackDir}}/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
 
     - os: linux
       types: [docker]
@@ -449,4 +397,4 @@ specs:
         <<: *elastic_license_for_binaries
         files:
           '{{.BeatName}}{{.BinaryExt}}':
-            source: ../x-pack/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}
+            source: ./{{.XPackDir}}/{{.BeatName}}/build/golang-crossbuild/{{.BeatName}}-{{.GOOS}}-{{.Platform.Arch}}{{.BinaryExt}}

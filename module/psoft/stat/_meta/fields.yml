@@ -1,5 +1,6 @@
 - name: stat
   type: group
+  release: ga
   description: >
     All PeopleSoft metric types
   fields:
@@ -12,8 +13,8 @@
       format: url
       script: "return  doc['psoft.stat.domain_name'].value"
       url_template: 
-        - min_version: "1.0.0"
-          value: ../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:"{{ value }}"'))
+        - min_version: "6.0.0"
+          value: "../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:{{ value }}'))"
       label_template: "{{ value }}"
       open_link_in_current_tab: true
     - name: web_domain_name_url
@@ -21,8 +22,8 @@
       format: url
       script: "return  doc['psoft.stat.domain_name'].value"
       url_template: 
-        - min_version: "1.0.0"
-          value: ../app/kibana#/dashboard/eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.domain_name:"{{ value }}"'))
+        - min_version: "6.0.0"
+          value: "../app/kibana#/dashboard/eeeeee10-6f55-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.domain_name:{{ value }}'))"
       label_template: "{{ value }}"
       open_link_in_current_tab: true
     - name: domain_type
@@ -364,7 +365,6 @@
               type: long
               description: >
                   Number of events (Push Notifications) fired through the web socket.
-
         - name: security
           type: group
           description: >
@@ -378,7 +378,6 @@
               type: long
               description: >
                   Number of Weblogic (my-realm) users that are currnetly locked.
-
         - name: jvm
           type: group
           description: >
@@ -509,4 +508,3 @@
               type: long
               description: >
                   Cache memory used for all PSAPPSRVs (kb).
-     

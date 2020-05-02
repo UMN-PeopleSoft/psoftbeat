@@ -1,0 +1,78 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "Overall summary of all PeopleSoft environments", 
+                "hits": 0, 
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+                }, 
+                "optionsJSON": "{\"useMargins\": true, \"darkTheme\": false, \"hidePanelTitles\": false}", 
+                "panelsJSON": "[{\"gridData\": {\"i\": \"1\", \"h\": 24, \"y\": 4, \"w\": 36, \"x\": 0}, \"title\": \"Environment List\", \"embeddableConfig\": {}, \"version\": \"7.3.0\", \"panelRefName\": \"panel_0\", \"panelIndex\": \"1\"}, {\"gridData\": {\"i\": \"2\", \"h\": 4, \"y\": 0, \"w\": 36, \"x\": 0}, \"title\": \"PeopleSoft Monitoring\", \"embeddableConfig\": {}, \"version\": \"7.3.0\", \"panelRefName\": \"panel_1\", \"panelIndex\": \"2\"}]", 
+                "timeRestore": false, 
+                "title": "[psoftbeat] Environment List", 
+                "version": 1
+            }, 
+            "id": "d6fa8d50-6c62-11e9-9fb1-cf4b0b7b6233", 
+            "migrationVersion": {
+                "dashboard": "7.3.0"
+            }, 
+            "references": [
+                {
+                    "id": "57830570-6c62-11e9-9fb1-cf4b0b7b6233", 
+                    "name": "panel_0", 
+                    "type": "visualization"
+                }, 
+                {
+                    "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738", 
+                    "name": "panel_1", 
+                    "type": "visualization"
+                }
+            ], 
+            "type": "dashboard", 
+            "updated_at": "2020-05-01T08:00:58.339Z", 
+            "version": "WzQ4OSwxXQ=="
+        }, 
+        {
+            "attributes": {
+                "description": "", 
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+                }, 
+                "title": "Environment List [psoftbeat]", 
+                "uiStateJSON": "{}", 
+                "version": 1, 
+                "visState": "{\"type\": \"metrics\", \"params\": {\"bar_color_rules\": [{\"id\": \"9c2f16b0-6c61-11e9-8271-bd397ea6f61a\"}], \"default_index_pattern\": \"psoftbeat-*\", \"pivot_rows\": \"32\", \"index_pattern\": \"psoftbeat*\", \"default_timefield\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"metrics\": [{\"order\": \"desc\", \"field\": \"psoft.stat.status\", \"percentiles\": [{\"value\": 50, \"id\": \"d6f4b660-6c61-11e9-8271-bd397ea6f61a\", \"shade\": 0.2, \"mode\": \"line\"}], \"agg_with\": \"min\", \"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"size\": 1}], \"aggregate_function\": null, \"aggregate_by\": null, \"color\": \"#68BC00\", \"stacked\": \"none\", \"value_template\": \"\", \"color_rules\": [{\"text\": \"rgba(222,215,26,1)\", \"id\": \"5f0f8330-6f5b-11e9-a234-d91f3533a11f\", \"value\": 0}], \"label\": \"Total App Servers\", \"filter\": {\"query\": \"psoft.stat.domain_type:app\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"offset_time\": \"\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}, {\"line_width\": 1, \"metrics\": [{\"type\": \"count\", \"id\": \"427c4781-7de3-11e9-abb8-ef3782d01ed6\"}], \"color\": \"#68BC00\", \"stacked\": \"none\", \"value_template\": \"\", \"color_rules\": [{\"operator\": \"lt\", \"text\": \"rgba(246,128,36,1)\", \"id\": \"55085b50-7de3-11e9-abb8-ef3782d01ed6\", \"value\": 1}], \"label\": \"App Server Up\", \"filter\": {\"query\": \"psoft.stat.domain_type:app AND psoft.stat.status:Up\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"offset_time\": \"\", \"id\": \"427c4780-7de3-11e9-abb8-ef3782d01ed6\", \"fill\": 0.5}, {\"line_width\": 1, \"metrics\": [{\"type\": \"count\", \"id\": \"28599b01-7de3-11e9-abb8-ef3782d01ed6\"}], \"color\": \"#68BC00\", \"stacked\": \"none\", \"color_rules\": [{\"id\": \"33828230-7de3-11e9-abb8-ef3782d01ed6\"}], \"label\": \"Total Web Servers\", \"filter\": {\"query\": \"psoft.stat.domain_type:web\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"28599b00-7de3-11e9-abb8-ef3782d01ed6\", \"fill\": 0.5}, {\"line_width\": 1, \"metrics\": [{\"type\": \"count\", \"id\": \"ab6fff11-7de4-11e9-abb8-ef3782d01ed6\"}], \"color\": \"#68BC00\", \"stacked\": \"none\", \"value_template\": \"\", \"color_rules\": [{\"operator\": \"lt\", \"text\": \"rgba(251,158,0,1)\", \"id\": \"b2b80290-7de4-11e9-abb8-ef3782d01ed6\", \"value\": 1}], \"label\": \"Web Servers Up\", \"filter\": {\"query\": \"psoft.stat.domain_type:web AND psoft.stat.status:Up\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"offset_time\": \"\", \"id\": \"ab6fff10-7de4-11e9-abb8-ef3782d01ed6\", \"fill\": 0.5}, {\"line_width\": 1, \"metrics\": [{\"type\": \"count\", \"id\": \"8ba044f1-7de5-11e9-abb8-ef3782d01ed6\"}], \"color\": \"#68BC00\", \"stacked\": \"none\", \"color_rules\": [{\"id\": \"9c258c40-7de5-11e9-abb8-ef3782d01ed6\"}], \"label\": \"Total Schedulers\", \"filter\": {\"query\": \"psoft.stat.domain_type:prc\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"8ba044f0-7de5-11e9-abb8-ef3782d01ed6\", \"fill\": 0.5}, {\"line_width\": 1, \"metrics\": [{\"type\": \"count\", \"id\": \"a7310060-7de5-11e9-abb8-ef3782d01ed6\"}], \"color\": \"#68BC00\", \"stacked\": \"none\", \"value_template\": \"\", \"color_rules\": [{\"operator\": \"lt\", \"text\": \"rgba(251,158,0,1)\", \"id\": \"ac20bc00-7de5-11e9-abb8-ef3782d01ed6\", \"value\": 1}], \"label\": \"Schedulers Up\", \"filter\": {\"query\": \"psoft.stat.domain_type:prc AND psoft.stat.status:Up\", \"language\": \"lucene\"}, \"separate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"offset_time\": \"\", \"id\": \"a730d950-7de5-11e9-abb8-ef3782d01ed6\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"isModelInvalid\": false, \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"filter\": \"\", \"time_field\": \"@timestamp\", \"show_legend\": 1, \"drilldown_url\": \"../app/kibana#/dashboard/90aea3c0-6f4d-11e9-9fb1-cf4b0b7b6233?_a=(query:(language:lucene,query:'psoft.stat.appenv:\\\"{{ key }}\\\"'))\", \"show_grid\": 1, \"pivot_label\": \"Environments\", \"pivot_id\": \"psoft.stat.appenv\", \"axis_scale\": \"normal\", \"type\": \"table\", \"axis_position\": \"left\", \"drop_last_bucket\": 1}, \"aggs\": [], \"title\": \"Environment List [psoftbeat]\"}"
+            }, 
+            "id": "57830570-6c62-11e9-9fb1-cf4b0b7b6233", 
+            "migrationVersion": {
+                "visualization": "7.4.2"
+            }, 
+            "references": [], 
+            "type": "visualization", 
+            "updated_at": "2020-05-01T17:09:04.380Z", 
+            "version": "WzU3MSwxXQ=="
+        }, 
+        {
+            "attributes": {
+                "description": "", 
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"kuery\"}}"
+                }, 
+                "title": "PSoft Dashboard Header [psoftbeat]", 
+                "uiStateJSON": "{}", 
+                "version": 1, 
+                "visState": "{\"type\": \"markdown\", \"params\": {\"openLinksInNewTab\": false, \"markdown\": \"[Environment List](#/dashboard/d6fa8d50-6c62-11e9-9fb1-cf4b0b7b6233)  | [Target Setup Issues](#/dashboard/9cd81950-7e67-11e9-a22b-1b4d7942c738)\", \"fontSize\": 14}, \"aggs\": [], \"title\": \"PSoft Dashboard Header [psoftbeat]\"}"
+            }, 
+            "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738", 
+            "migrationVersion": {
+                "visualization": "7.4.2"
+            }, 
+            "references": [], 
+            "type": "visualization", 
+            "updated_at": "2020-05-01T08:00:58.339Z", 
+            "version": "WzQ4OCwxXQ=="
+        }
+    ], 
+    "version": "7.6.1"
+}

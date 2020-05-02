@@ -1,30 +1,61 @@
-  - module: psoft
-    metricsets: ["stat"]
-    enabled: true
-    period: 30s
-    # metrics always ran locally, the PSoft JMX Library will handle remote targets through custom configs
-    hosts: ["localhost"]
+- module: psoft
+  metricsets: ["stat"]
+  enabled: true
+  # Duration between each metric capture
+  period: 60s
+  hosts: ["localhost"]
 
-    # Path to a list of targets using a space separated 'csv' format, see example domain list file.
-    # All targets you want to monitor.  Maintain the list with your operational scripts to add domain to list when it is created/deleted.
-    # Metricbeat will re-load this list for every metric capture to automatically monitor new domains as they are created.
-    pathInventoryFile: "domainList.csv"
-    # Path to a list of domain names in blackout state, will mark target as blackout instead of down or alerting.
-    # Maintain this file with your operations scripts for stop/start.  Metricbeat will reload list for every metric capture.
-    pathBlackoutFile: "blackoutList.csv"
-    # Path to a list of domains to exclude.  if you run domains in standby and shutdown, add to this list.
-    # Monitoring will be ignored for these targets.  Useful if you domain list/inventory may include these targets.
-    pathExclusionFile: "exclusionList.csv"
-    # Prebuilt JMX attribute to metric configurations for each metricset.  No need to change
-    attribWebMetrics: "web_metric.yaml"
-    attribAppMetrics: "app_metric.yaml"
-    attribPrcMetrics: "prc_metric.yaml"
-    # A Java 1.8 JRE to be used by JMX Client (and Nailgun) to connected to Weblogic and App Server RMI services.
-    javaPath: "/psoft/admin/software/java/jdk1.8.0_141/jre"
-    # Debugging support, defaults to INFO
-    #logLevel:
-    # Number of concurrent workers to pull metrics for a target.
-    # Default is 5, adjust based on size of host and number of total targets/domains.
-    #concurrentWorkers: 5
-    # Conntect string to nailgun server. This uses a UNIX socket.  Defaults to: "local:/tmp/psmetric.socket"
-    #nailgunServerConn: local:/tmp/psmetric.socket
+  # Domain list is the inventory of of peoplesoft instances to monitor.
+  # This could be in relative path to the psoftbeat install, or reference
+  # an explicit path where the inventory may be on a shared drive.
+  # See Documents on format of that file.
+  pathInventoryFile: "domainList.csv"
+
+  # (optional) Blackout list is a simple file to identifiy targets in the domain list
+  # that you would like to stop monitoring for a period of time.
+  # See documentation on format of the file.
+  pathBlackoutFile: "blackoutList.csv"
+
+  # (optional) Exclusion is a long term list of domains to stop monitoring.  This could
+  # be used for scaling or shrinking capacity.
+  pathExclusionFile: "exclusionList.csv"
+
+  # JMX will use a java client, need path to installed java
+  javaPath: "/usr/lib/jvm/jre-1.8.0"
+
+  # Metric configuration secifiying the JMX attributes to capture data from
+  # These are pre-configured for Weblogic and Tuxedo.  No need to change 
+  attribWebMetrics: "web_metric.yaml"
+  attribAppMetrics: "app_metric.yaml"
+  attribPrcMetrics: "prc_metric.yaml"
+
+  # Debugging
+  #logLevel: INFO
+
+  # Number of concurrent workers to pull metrics for a list of targets.
+  # Default is 5, adjust based on size of host and number of total targets/domains.
+  concurrentWorkers: 5
+
+  # Conntect string to nailgun server. This uses a UNIX socket.  
+  # Defaults to: "local:/<install-path>/psmetric.socket"
+  # For Windows override this with a simple TCP Port
+  #nailgunServerConn: local:/tmp/psmetric.socket
+
+  # Setup a unique domain name by concatenating the host to the domain name
+  # If you use generic domain names, set to "true" to append host to name to make it unique
+  #concatDomainHost: false
+
+  # If you have long host names, and only want to append the last few characters,
+  # Set 'useLastXCharsOfHost' to the number of characters from the end of the host name
+  #useLastXCharsOfHost: 0
+  
+  # You can leverage the domain target list in different ways
+  # Option 1 (default): Monitor all domains/instance in the inventory file.
+  #    The inventory file could be a list of just local domains or full
+  #    list of all your PeopleSoft instance local and remote.  The inventory file
+  #    could be local or on a share drive path.
+  # Option 2: Set "localInventoryOnly: true" will read the inventory and only
+  #    monitor domains on the current host.  This is intended for when the
+  #    inventory file is stored on a shared drive, but each beat only monitors
+  #    the local domains/instances running on the current host.
+  #localInventoryOnly: false

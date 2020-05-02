@@ -1,0 +1,1409 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "Summary for specific app/env or DB",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "lucene",
+              "query": ""
+            }
+          }
+        },
+        "optionsJSON": {
+          "darkTheme": false,
+          "hidePanelTitles": false,
+          "useMargins": true
+        },
+        "panelsJSON": [
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 10,
+              "i": "3",
+              "w": 24,
+              "x": 24,
+              "y": 18
+            },
+            "panelIndex": "3",
+            "panelRefName": "panel_0",
+            "title": "App Server Load -\u003e 1 = App Server Full Capacity",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 10,
+              "i": "4",
+              "w": 24,
+              "x": 0,
+              "y": 27
+            },
+            "panelIndex": "4",
+            "panelRefName": "panel_1",
+            "title": "Web Response Time",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 9,
+              "i": "7",
+              "w": 24,
+              "x": 0,
+              "y": 37
+            },
+            "panelIndex": "7",
+            "panelRefName": "panel_2",
+            "title": "Session Count",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 8,
+              "i": "11",
+              "w": 24,
+              "x": 0,
+              "y": 0
+            },
+            "panelIndex": "11",
+            "panelRefName": "panel_3",
+            "title": "PeopleSoft Monitoring",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 10,
+              "i": "13",
+              "w": 24,
+              "x": 0,
+              "y": 8
+            },
+            "panelIndex": "13",
+            "panelRefName": "panel_4",
+            "title": "Web Server List",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 10,
+              "i": "14",
+              "w": 24,
+              "x": 24,
+              "y": 8
+            },
+            "panelIndex": "14",
+            "panelRefName": "panel_5",
+            "title": "App Server List",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 9,
+              "i": "15",
+              "w": 24,
+              "x": 24,
+              "y": 28
+            },
+            "panelIndex": "15",
+            "panelRefName": "panel_6",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 8,
+              "i": "16",
+              "w": 24,
+              "x": 24,
+              "y": 0
+            },
+            "panelIndex": "16",
+            "panelRefName": "panel_7",
+            "title": "Scheduler List",
+            "version": "7.3.0"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 9,
+              "i": "17",
+              "w": 24,
+              "x": 0,
+              "y": 18
+            },
+            "panelIndex": "17",
+            "panelRefName": "panel_8",
+            "title": "Weblogic Thread Metrics",
+            "version": "7.3.0"
+          }
+        ],
+        "timeRestore": false,
+        "title": "[psoftbeat] App Env Summary",
+        "version": 1
+      },
+      "id": "90aea3c0-6f4d-11e9-9fb1-cf4b0b7b6233",
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      },
+      "references": [
+        {
+          "id": "e0e5ac00-7e37-11e9-a22b-1b4d7942c738",
+          "name": "panel_0",
+          "type": "visualization"
+        },
+        {
+          "id": "75e986a0-6f56-11e9-9fb1-cf4b0b7b6233",
+          "name": "panel_1",
+          "type": "visualization"
+        },
+        {
+          "id": "7931bbe0-7e40-11e9-a22b-1b4d7942c738",
+          "name": "panel_2",
+          "type": "visualization"
+        },
+        {
+          "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738",
+          "name": "panel_3",
+          "type": "visualization"
+        },
+        {
+          "id": "ecebcae0-8047-11e9-a22b-1b4d7942c738",
+          "name": "panel_4",
+          "type": "visualization"
+        },
+        {
+          "id": "00ef21a0-8196-11e9-a22b-1b4d7942c738",
+          "name": "panel_5",
+          "type": "visualization"
+        },
+        {
+          "id": "2134b6f0-81b4-11e9-a22b-1b4d7942c738",
+          "name": "panel_6",
+          "type": "visualization"
+        },
+        {
+          "id": "82c08e50-81b2-11e9-a22b-1b4d7942c738",
+          "name": "panel_7",
+          "type": "visualization"
+        },
+        {
+          "id": "8df29c20-7e63-11e9-a22b-1b4d7942c738",
+          "name": "panel_8",
+          "type": "visualization"
+        }
+      ],
+      "type": "dashboard",
+      "updated_at": "2020-05-01T08:00:55.304Z",
+      "version": "WzQ3MSwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: App Server Load History [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "axis_formatter": "number",
+            "axis_position": "left",
+            "axis_scale": "normal",
+            "background_color": "rgba(255,186,173,0.69)",
+            "default_index_pattern": "psoftbeat-*",
+            "default_timefield": "@timestamp",
+            "drop_last_bucket": 1,
+            "id": "61ca57f0-469d-11e7-af02-69e470af7417",
+            "index_pattern": "psoftbeat*",
+            "interval": "auto",
+            "isModelInvalid": false,
+            "legend_position": "right",
+            "series": [
+              {
+                "axis_position": "right",
+                "chart_type": "line",
+                "color": "rgba(215,23,17,1)",
+                "fill": "0.0",
+                "filter": {
+                  "language": "lucene",
+                  "query": "psoft.stat.domain_type:app"
+                },
+                "formatter": "number",
+                "hide_in_legend": 0,
+                "id": "61ca57f1-469d-11e7-af02-69e470af7417",
+                "label": "App Servers Average Load History",
+                "line_width": "2",
+                "metrics": [
+                  {
+                    "field": "psoft.stat.appsrv.load",
+                    "id": "61ca57f2-469d-11e7-af02-69e470af7417",
+                    "type": "avg"
+                  }
+                ],
+                "point_size": 1,
+                "separate_axis": 0,
+                "series_drop_last_bucket": 1,
+                "split_color_mode": "rainbow",
+                "split_mode": "terms",
+                "stacked": "none",
+                "steps": 0,
+                "terms_field": "psoft.stat.domain_name",
+                "terms_order_by": "61ca57f2-469d-11e7-af02-69e470af7417",
+                "value_template": "{{value}}"
+              }
+            ],
+            "show_grid": 1,
+            "show_legend": 1,
+            "time_field": "@timestamp",
+            "type": "timeseries"
+          },
+          "title": "AppEnv: App Server Load History [psoftbeat]",
+          "type": "metrics"
+        }
+      },
+      "id": "e0e5ac00-7e37-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:05:29.352Z",
+      "version": "WzU1NiwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: Web Response History [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "axis_formatter": "number",
+            "axis_position": "left",
+            "axis_scale": "normal",
+            "background_color": "rgba(168,213,249,0.55)",
+            "default_index_pattern": "psoftbeat-*",
+            "default_timefield": "@timestamp",
+            "filter": {
+              "language": "lucene",
+              "query": "psoft.stat.domain_type:web"
+            },
+            "id": "61ca57f0-469d-11e7-af02-69e470af7417",
+            "index_pattern": "psoftbeat*",
+            "interval": "auto",
+            "isModelInvalid": false,
+            "legend_position": "left",
+            "series": [
+              {
+                "axis_position": "right",
+                "chart_type": "line",
+                "color": "#68BC00",
+                "fill": "0",
+                "formatter": "ms,s,2",
+                "id": "61ca57f1-469d-11e7-af02-69e470af7417",
+                "label": "Average Web Server Response Time",
+                "line_width": "2",
+                "metrics": [
+                  {
+                    "agg_with": "avg",
+                    "field": "psoft.stat.web.servlets.psc.exec_time_avg",
+                    "id": "61ca57f2-469d-11e7-af02-69e470af7417",
+                    "order": "desc",
+                    "size": 1,
+                    "type": "avg"
+                  }
+                ],
+                "point_size": 1,
+                "separate_axis": 0,
+                "split_color_mode": "rainbow",
+                "split_mode": "terms",
+                "stacked": "none",
+                "terms_field": "psoft.stat.domain_name",
+                "terms_order_by": "61ca57f2-469d-11e7-af02-69e470af7417"
+              }
+            ],
+            "show_grid": 1,
+            "show_legend": 1,
+            "time_field": "@timestamp",
+            "type": "timeseries"
+          },
+          "title": "AppEnv: Web Response History [psoftbeat]",
+          "type": "metrics"
+        }
+      },
+      "id": "75e986a0-6f56-11e9-9fb1-cf4b0b7b6233",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:05:59.485Z",
+      "version": "WzU2MSwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: Web Session Count History [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "axis_formatter": "number",
+            "axis_position": "left",
+            "axis_scale": "normal",
+            "background_color": "rgba(168,213,255,0.55)",
+            "default_index_pattern": "psoftbeat-*",
+            "default_timefield": "@timestamp",
+            "filter": {
+              "language": "lucene",
+              "query": "psoft.stat.domain_type:web"
+            },
+            "id": "61ca57f0-469d-11e7-af02-69e470af7417",
+            "index_pattern": "psoftbeat*",
+            "interval": "auto",
+            "isModelInvalid": false,
+            "legend_position": "left",
+            "series": [
+              {
+                "axis_position": "right",
+                "chart_type": "line",
+                "color": "rgba(211,49,21,1)",
+                "fill": "0",
+                "formatter": "number",
+                "id": "61ca57f1-469d-11e7-af02-69e470af7417",
+                "label": "Web Session Count History",
+                "line_width": "2",
+                "metrics": [
+                  {
+                    "field": "psoft.stat.web.sessions_current",
+                    "id": "61ca57f2-469d-11e7-af02-69e470af7417",
+                    "type": "avg"
+                  }
+                ],
+                "point_size": 1,
+                "separate_axis": 0,
+                "split_color_mode": "rainbow",
+                "split_filters": [
+                  {
+                    "color": "#68BC00",
+                    "id": "463c1460-7e40-11e9-8fd0-ad4a58e2a0a2"
+                  }
+                ],
+                "split_mode": "terms",
+                "stacked": "none",
+                "terms_field": "psoft.stat.domain_name",
+                "terms_order_by": "61ca57f2-469d-11e7-af02-69e470af7417"
+              }
+            ],
+            "show_grid": 1,
+            "show_legend": 1,
+            "time_field": "@timestamp",
+            "type": "timeseries"
+          },
+          "title": "AppEnv: Web Session Count History [psoftbeat]",
+          "type": "metrics"
+        }
+      },
+      "id": "7931bbe0-7e40-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:06:17.999Z",
+      "version": "WzU2MiwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "PSoft Dashboard Header [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "fontSize": 14,
+            "markdown": "[Environment List](#/dashboard/d6fa8d50-6c62-11e9-9fb1-cf4b0b7b6233)  | [Target Setup Issues](#/dashboard/9cd81950-7e67-11e9-a22b-1b4d7942c738)",
+            "openLinksInNewTab": false
+          },
+          "title": "PSoft Dashboard Header [psoftbeat]",
+          "type": "markdown"
+        }
+      },
+      "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T08:00:58.339Z",
+      "version": "WzQ4OCwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: Web Server List [psoftbeat]",
+        "uiStateJSON": {
+          "vis": {
+            "params": {
+              "sort": {
+                "columnIndex": null,
+                "direction": null
+              }
+            }
+          }
+        },
+        "version": 1,
+        "visState": {
+          "aggs": [
+            {
+              "enabled": true,
+              "id": "1",
+              "params": {
+                "customLabel": "Sessions",
+                "field": "psoft.stat.web.sessions_current"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "6",
+              "params": {
+                "customLabel": "Avg Response Time (ms)",
+                "field": "psoft.stat.web.servlets.psc.exec_time_avg"
+              },
+              "schema": "metric",
+              "type": "avg"
+            },
+            {
+              "enabled": true,
+              "id": "7",
+              "params": {
+                "customLabel": "App/Env",
+                "field": "psoft.stat.appenv",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "3",
+              "params": {
+                "customLabel": "Domain Name",
+                "field": "psoft.stat.web_domain_name_url",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "8",
+              "params": {
+                "customLabel": "Type",
+                "field": "psoft.stat.domain_type",
+                "include": "web",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "4",
+              "params": {
+                "customLabel": "Health",
+                "field": "psoft.stat.health",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "5",
+              "params": {
+                "customLabel": "Load",
+                "field": "psoft.stat.ps_load",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "9",
+              "params": {
+                "customLabel": "Stuck Threads",
+                "field": "psoft.stat.web.thread_pool.stuck_count"
+              },
+              "schema": "metric",
+              "type": "avg"
+            }
+          ],
+          "params": {
+            "perPage": 5,
+            "showMetricsAtAllLevels": false,
+            "showPartialRows": false,
+            "showTotal": true,
+            "sort": {
+              "columnIndex": null,
+              "direction": null
+            },
+            "totalFunc": "avg"
+          },
+          "title": "AppEnv: Web Server List [psoftbeat]",
+          "type": "table"
+        }
+      },
+      "id": "ecebcae0-8047-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "psoftbeat",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-01T08:00:55.304Z",
+      "version": "WzQ2NiwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: App Server List [psoftbeat]",
+        "uiStateJSON": {
+          "vis": {
+            "params": {
+              "sort": {
+                "columnIndex": null,
+                "direction": null
+              }
+            }
+          }
+        },
+        "version": 1,
+        "visState": {
+          "aggs": [
+            {
+              "enabled": true,
+              "id": "1",
+              "params": {
+                "customLabel": "Req Load",
+                "field": "psoft.stat.appsrv.load"
+              },
+              "schema": "metric",
+              "type": "avg"
+            },
+            {
+              "enabled": true,
+              "id": "2",
+              "params": {
+                "customLabel": "App/Env",
+                "field": "psoft.stat.appenv",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "9",
+              "params": {
+                "customLabel": "Domain Name",
+                "field": "psoft.stat.app_domain_name_url",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 8
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "8",
+              "params": {
+                "customLabel": "Type",
+                "field": "psoft.stat.domain_type",
+                "include": "app",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "4",
+              "params": {
+                "customLabel": "Health",
+                "field": "psoft.stat.health",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "5",
+              "params": {
+                "customLabel": "Load",
+                "field": "psoft.stat.ps_load",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "6",
+              "params": {
+                "customLabel": "Avg Requests / Sec",
+                "field": "psoft.stat.appsrv.request_per_sec_total"
+              },
+              "schema": "metric",
+              "type": "avg"
+            },
+            {
+              "enabled": true,
+              "id": "7",
+              "params": {
+                "customLabel": "Avg Response (ms)",
+                "field": "psoft.stat.appsrv.request_service_time_ms_avg"
+              },
+              "schema": "metric",
+              "type": "avg"
+            }
+          ],
+          "params": {
+            "dimensions": {
+              "buckets": [
+                {
+                  "accessor": 0,
+                  "aggType": "terms",
+                  "format": {
+                    "id": "terms",
+                    "params": {
+                      "id": "string",
+                      "missingBucketLabel": "Missing",
+                      "otherBucketLabel": "Other",
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "App/Env",
+                  "params": {}
+                },
+                {
+                  "accessor": 1,
+                  "aggType": "terms",
+                  "format": {
+                    "id": "terms",
+                    "params": {
+                      "id": "string",
+                      "missingBucketLabel": "Missing",
+                      "otherBucketLabel": "Other",
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Type",
+                  "params": {}
+                },
+                {
+                  "accessor": 2,
+                  "aggType": "terms",
+                  "format": {
+                    "id": "terms",
+                    "params": {
+                      "id": "string",
+                      "missingBucketLabel": "Missing",
+                      "otherBucketLabel": "Other",
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Health",
+                  "params": {}
+                },
+                {
+                  "accessor": 3,
+                  "aggType": "terms",
+                  "format": {
+                    "id": "terms",
+                    "params": {
+                      "id": "string",
+                      "missingBucketLabel": "Missing",
+                      "otherBucketLabel": "Other",
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Load",
+                  "params": {}
+                },
+                {
+                  "accessor": 4,
+                  "aggType": "terms",
+                  "format": {
+                    "id": "terms",
+                    "params": {
+                      "id": "url",
+                      "labelTemplate": "{{ value }}",
+                      "missingBucketLabel": "Missing",
+                      "openLinkInCurrentTab": true,
+                      "otherBucketLabel": "Other",
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      },
+                      "urlTemplate": "../app/kibana#/dashboard/e7983b60-7e39-11e9-a22b-1b4d7942c738?_a=(query:(language:lucene,query:'psoft.stat.domain_name:\"{{ value }}\"'))"
+                    }
+                  },
+                  "label": "Domain Name",
+                  "params": {}
+                }
+              ],
+              "metrics": [
+                {
+                  "accessor": 5,
+                  "aggType": "avg",
+                  "format": {
+                    "id": "number",
+                    "params": {
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Req Load",
+                  "params": {}
+                },
+                {
+                  "accessor": 6,
+                  "aggType": "avg",
+                  "format": {
+                    "id": "number",
+                    "params": {
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Avg Requests / Sec",
+                  "params": {}
+                },
+                {
+                  "accessor": 7,
+                  "aggType": "avg",
+                  "format": {
+                    "id": "number",
+                    "params": {
+                      "parsedUrl": {
+                        "basePath": "",
+                        "origin": "http://ents-ps-dev-appdpk-02.oit.umn.edu:5601",
+                        "pathname": "/app/kibana"
+                      }
+                    }
+                  },
+                  "label": "Avg Response (ms)",
+                  "params": {}
+                }
+              ]
+            },
+            "perPage": 5,
+            "percentageCol": "",
+            "showMetricsAtAllLevels": false,
+            "showPartialRows": false,
+            "showTotal": true,
+            "sort": {
+              "columnIndex": null,
+              "direction": null
+            },
+            "totalFunc": "avg"
+          },
+          "title": "AppEnv: App Server List [psoftbeat]",
+          "type": "table"
+        }
+      },
+      "id": "00ef21a0-8196-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "psoftbeat",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:12:33.363Z",
+      "version": "WzU3MywxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: App Server Req/Sec History [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "axis_formatter": "number",
+            "axis_position": "left",
+            "axis_scale": "normal",
+            "background_color": "rgba(255,186,173,0.69)",
+            "background_color_rules": [
+              {
+                "id": "8cc8a6c0-81b3-11e9-9c5e-430658a2d98e"
+              }
+            ],
+            "default_index_pattern": "psoftbeat-*",
+            "default_timefield": "@timestamp",
+            "filter": {
+              "language": "lucene",
+              "query": "psoft.stat.domain_type:app"
+            },
+            "id": "61ca57f0-469d-11e7-af02-69e470af7417",
+            "index_pattern": "psoftbeat*",
+            "interval": "auto",
+            "isModelInvalid": false,
+            "legend_position": "right",
+            "series": [
+              {
+                "axis_position": "right",
+                "chart_type": "line",
+                "color": "#68BC00",
+                "fill": "0",
+                "formatter": "number",
+                "id": "61ca57f1-469d-11e7-af02-69e470af7417",
+                "label": "Req / Sec",
+                "line_width": "2",
+                "metrics": [
+                  {
+                    "field": "psoft.stat.appsrv.request_per_sec_total",
+                    "id": "61ca57f2-469d-11e7-af02-69e470af7417",
+                    "type": "avg"
+                  }
+                ],
+                "point_size": 1,
+                "separate_axis": 0,
+                "split_color_mode": "rainbow",
+                "split_mode": "terms",
+                "stacked": "none",
+                "terms_field": "psoft.stat.domain_name",
+                "terms_order_by": "61ca57f2-469d-11e7-af02-69e470af7417",
+                "value_template": "{{value}}/s"
+              }
+            ],
+            "show_grid": 1,
+            "show_legend": 1,
+            "time_field": "@timestamp",
+            "type": "timeseries"
+          },
+          "title": "AppEnv: App Server Req/Sec History [psoftbeat]",
+          "type": "metrics"
+        }
+      },
+      "id": "2134b6f0-81b4-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:05:44.989Z",
+      "version": "WzU1OCwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: Scheduler List [psoftbeat]",
+        "uiStateJSON": {
+          "vis": {
+            "params": {
+              "sort": {
+                "columnIndex": null,
+                "direction": null
+              }
+            }
+          }
+        },
+        "version": 1,
+        "visState": {
+          "aggs": [
+            {
+              "enabled": true,
+              "id": "1",
+              "params": {
+                "customLabel": "Request Count",
+                "field": "psoft.stat.prc.requests_total"
+              },
+              "schema": "metric",
+              "type": "avg"
+            },
+            {
+              "enabled": true,
+              "id": "2",
+              "params": {
+                "customLabel": "App/Env",
+                "field": "psoft.stat.appenv",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "3",
+              "params": {
+                "customLabel": "Domain Name",
+                "field": "psoft.stat.domain_name",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "9",
+              "params": {
+                "customLabel": "Server Name",
+                "field": "psoft.stat.server_name",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "4",
+              "params": {
+                "customLabel": "Health",
+                "field": "psoft.stat.health",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "5",
+              "params": {
+                "customLabel": "Load",
+                "field": "psoft.stat.ps_load",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "8",
+              "params": {
+                "customLabel": "Type",
+                "field": "psoft.stat.domain_type",
+                "include": "prc",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            }
+          ],
+          "params": {
+            "perPage": 10,
+            "showMetricsAtAllLevels": false,
+            "showPartialRows": false,
+            "showTotal": false,
+            "sort": {
+              "columnIndex": null,
+              "direction": null
+            },
+            "totalFunc": "sum"
+          },
+          "title": "AppEnv: Scheduler List [psoftbeat]",
+          "type": "table"
+        }
+      },
+      "id": "82c08e50-81b2-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "psoftbeat",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-01T08:00:55.304Z",
+      "version": "WzQ2OSwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "AppEnv: Web Thread Metrics [psoftbeat]",
+        "uiStateJSON": {
+          "vis": {
+            "params": {
+              "sort": {
+                "columnIndex": null,
+                "direction": null
+              }
+            }
+          }
+        },
+        "version": 1,
+        "visState": {
+          "aggs": [
+            {
+              "enabled": true,
+              "id": "1",
+              "params": {
+                "customLabel": "Total Threads",
+                "field": "psoft.stat.web.thread_pool.execute.total"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "8",
+              "params": {
+                "customLabel": "Idle Threads",
+                "field": "psoft.stat.web.thread_pool.execute.idle"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "2",
+              "params": {
+                "customLabel": "Standby Threads",
+                "field": "psoft.stat.web.thread_pool.standby_count"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "3",
+              "params": {
+                "customLabel": "Hogging Threads",
+                "field": "psoft.stat.web.thread_pool.hogging_count"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "4",
+              "params": {
+                "customLabel": "Stuck Threads",
+                "field": "psoft.stat.web.thread_pool.stuck_count"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "5",
+              "params": {
+                "customLabel": "Pending Requests",
+                "field": "psoft.stat.web.thread_pool.pending_requests"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "6",
+              "params": {
+                "customLabel": "Queued Requests",
+                "field": "psoft.stat.web.thread_pool.queue_length"
+              },
+              "schema": "metric",
+              "type": "max"
+            },
+            {
+              "enabled": true,
+              "id": "7",
+              "params": {
+                "customLabel": "Domains",
+                "exclude": "",
+                "field": "psoft.stat.domain_name",
+                "include": "",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "9",
+              "params": {
+                "customLabel": "Type",
+                "exclude": "app",
+                "field": "psoft.stat.domain_type",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "1",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            }
+          ],
+          "params": {
+            "perPage": 5,
+            "showMetricsAtAllLevels": false,
+            "showPartialRows": false,
+            "showTotal": true,
+            "sort": {
+              "columnIndex": null,
+              "direction": null
+            },
+            "totalFunc": "sum"
+          },
+          "title": "AppEnv: Web Thread Metrics [psoftbeat]",
+          "type": "table"
+        }
+      },
+      "id": "8df29c20-7e63-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "psoftbeat",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-01T08:00:55.304Z",
+      "version": "WzQ3MCwxXQ=="
+    }
+  ],
+  "version": "7.6.1"
+}

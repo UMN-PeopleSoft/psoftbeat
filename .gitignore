@@ -1,11 +1,7 @@
 # Directories
 build
-logs/*.log
-logs/nail*
-logs/psoft*
+logs
 data
-vendor
-docs
 blackoutList.csv
 exclusionList.csv
 domainList.csv
@@ -13,5 +9,4 @@ nailgun.log*
 psoftjmx.log
 psoftbeat
 logging.properties
-wlthint3client.jar
-!vendor/github.com/elastic/beats/dev-tools/packaging/packages.yml
+wlthint3sclient.jar

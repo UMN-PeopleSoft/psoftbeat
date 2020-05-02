@@ -1,7 +1,8 @@
 - key: psoft
   title: "PeopleSoft Metricbeat"
   description: >
-    Captures metrics for PeopleSoft environments
+    Captures metrics for PeopleSoft environments.  Include web, app, and scheduler instances.
+  release: ga
   fields:
     - name: psoft
       type: group

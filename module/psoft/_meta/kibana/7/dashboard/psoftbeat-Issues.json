@@ -1,0 +1,260 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "List of targets not loading correctly to Kibana",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "optionsJSON": {
+          "darkTheme": false,
+          "hidePanelTitles": false,
+          "useMargins": true
+        },
+        "panelsJSON": [
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 4,
+              "i": "3",
+              "w": 34,
+              "x": 0,
+              "y": 0
+            },
+            "panelIndex": "3",
+            "panelRefName": "panel_0",
+            "version": "7.6.1"
+          },
+          {
+            "embeddableConfig": {},
+            "gridData": {
+              "h": 15,
+              "i": "571c18fe-bda5-47b9-a898-05d8a86ca901",
+              "w": 34,
+              "x": 0,
+              "y": 4
+            },
+            "panelIndex": "571c18fe-bda5-47b9-a898-05d8a86ca901",
+            "panelRefName": "panel_1",
+            "version": "7.6.1"
+          }
+        ],
+        "timeRestore": false,
+        "title": "[psoftbeat] PeopleSoft Setup Issues",
+        "version": 1
+      },
+      "id": "9cd81950-7e67-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      },
+      "references": [
+        {
+          "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738",
+          "name": "panel_0",
+          "type": "visualization"
+        },
+        {
+          "id": "62f43a20-8bd1-11ea-b76b-8558c34351f8",
+          "name": "panel_1",
+          "type": "visualization"
+        }
+      ],
+      "type": "dashboard",
+      "updated_at": "2020-05-01T17:30:24.632Z",
+      "version": "WzU4MywxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "filter": [],
+            "query": {
+              "language": "kuery",
+              "query": ""
+            }
+          }
+        },
+        "title": "PSoft Dashboard Header [psoftbeat]",
+        "uiStateJSON": {},
+        "version": 1,
+        "visState": {
+          "aggs": [],
+          "params": {
+            "fontSize": 14,
+            "markdown": "[Environment List](#/dashboard/d6fa8d50-6c62-11e9-9fb1-cf4b0b7b6233)  | [Target Setup Issues](#/dashboard/9cd81950-7e67-11e9-a22b-1b4d7942c738)",
+            "openLinksInNewTab": false
+          },
+          "title": "PSoft Dashboard Header [psoftbeat]",
+          "type": "markdown"
+        }
+      },
+      "id": "e7c41770-7e67-11e9-a22b-1b4d7942c738",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-05-01T08:00:58.339Z",
+      "version": "WzQ4OCwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "Check metrics for errors",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": {
+            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index"
+          }
+        },
+        "title": "Issues: Problem Targets [psoftbeat]",
+        "uiStateJSON": {
+          "vis": {
+            "params": {
+              "sort": {
+                "columnIndex": null,
+                "direction": null
+              }
+            }
+          }
+        },
+        "version": 1,
+        "visState": {
+          "aggs": [
+            {
+              "enabled": true,
+              "id": "4",
+              "params": {
+                "customLabel": "AppEnv",
+                "field": "psoft.stat.appenv",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "2",
+              "params": {
+                "customLabel": "Domain Name",
+                "field": "psoft.stat.domain_name",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "3",
+              "params": {
+                "customLabel": "Server Name",
+                "field": "psoft.stat.serverName",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 10
+              },
+              "schema": "bucket",
+              "type": "terms"
+            },
+            {
+              "enabled": true,
+              "id": "5",
+              "params": {
+                "aggregate": "concat",
+                "customLabel": "Last Status",
+                "field": "psoft.stat.status",
+                "size": 1,
+                "sortField": "@timestamp",
+                "sortOrder": "desc"
+              },
+              "schema": "metric",
+              "type": "top_hits"
+            },
+            {
+              "enabled": true,
+              "id": "6",
+              "params": {
+                "customLabel": "Error Message",
+                "field": "error.code",
+                "missingBucket": false,
+                "missingBucketLabel": "Missing",
+                "order": "desc",
+                "orderBy": "_key",
+                "otherBucket": false,
+                "otherBucketLabel": "Other",
+                "size": 5
+              },
+              "schema": "bucket",
+              "type": "terms"
+            }
+          ],
+          "params": {
+            "dimensions": {
+              "buckets": [],
+              "metrics": [
+                {
+                  "accessor": 0,
+                  "aggType": "count",
+                  "format": {
+                    "id": "number"
+                  },
+                  "label": "Count",
+                  "params": {}
+                }
+              ]
+            },
+            "perPage": 10,
+            "percentageCol": "",
+            "showMetricsAtAllLevels": false,
+            "showPartialRows": false,
+            "showTotal": false,
+            "sort": {
+              "columnIndex": null,
+              "direction": null
+            },
+            "totalFunc": "sum"
+          },
+          "title": "Issues: Problem Targets [psoftbeat]",
+          "type": "table"
+        }
+      },
+      "id": "62f43a20-8bd1-11ea-b76b-8558c34351f8",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "psoftbeat",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-01T17:30:01.282Z",
+      "version": "WzU4MiwxXQ=="
+    }
+  ],
+  "version": "7.6.1"
+}

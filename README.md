@@ -1,18 +1,7 @@
 # psoftbeat
 
-## Summary
-Psoftbeat is a beat based on metricbeat which was generated with metricbeat/metricset generator.
-Psoftbeat captures metrics for PeopleSoft targets like Weblogic, App Server (Tuxedo) and Scheduler(Tuxedo).
+psoftbeat is a beat based on metricbeat which was generated with metricbeat/metricset generator.
 
-The psoftbeat monitor uses the [psoftjmx](https://github.com/UMN-PeopleSoft/psoftjmx) library that provides a fast concurrent loader of JMX metrics from all PeopleSoft target types.
-
-See releases for current packaged deployment ready to be used.
-
-Steps for running the beat are on the wiki page https://github.com/UMN-PeopleSoft/psoftbeat/wiki/Implementing-the-psoftbeat-on-the-ElasticSearch-and-Kibana
-
-
-
-## Development 
 
 ## Getting started
 

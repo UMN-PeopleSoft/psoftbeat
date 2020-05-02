@@ -1,0 +1,92 @@
+////
+This file is generated! See scripts/mage/docs_collector.go
+////
+
+[[psoftbeat-module-psoft]]
+== PeopleSoft Metricbeat module
+
+This is the psoft module.
+
+
+
+[float]
+=== Example configuration
+
+The PeopleSoft Metricbeat module supports the standard configuration options that are described
+in <<configuration-psoftbeat>>. Here is an example configuration:
+
+[source,yaml]
+----
+psoftbeat.modules:
+- module: psoft
+  metricsets: ["stat"]
+  enabled: true
+  # Duration between each metric capture
+  period: 60s
+  hosts: ["localhost"]
+
+  # Domain list is the inventory of of peoplesoft instances to monitor.
+  # This could be in relative path to the psoftbeat install, or reference
+  # an explicit path where the inventory may be on a shared drive.
+  # See Documents on format of that file.
+  pathInventoryFile: "domainList.csv"
+
+  # (optional) Blackout list is a simple file to identifiy targets in the domain list
+  # that you would like to stop monitoring for a period of time.
+  # See documentation on format of the file.
+  pathBlackoutFile: "blackoutList.csv"
+
+  # (optional) Exclusion is a long term list of domains to stop monitoring.  This could
+  # be used for scaling or shrinking capacity.
+  pathExclusionFile: "exclusionList.csv"
+
+  # JMX will use a java client, need path to installed java
+  javaPath: "/usr/lib/jvm/jre-1.8.0"
+
+  # Metric configuration secifiying the JMX attributes to capture data from
+  # These are pre-configured for Weblogic and Tuxedo.  No need to change 
+  attribWebMetrics: "web_metric.yaml"
+  attribAppMetrics: "app_metric.yaml"
+  attribPrcMetrics: "prc_metric.yaml"
+
+  # Debugging
+  #logLevel: INFO
+
+  # Number of concurrent workers to pull metrics for a list of targets.
+  # Default is 5, adjust based on size of host and number of total targets/domains.
+  concurrentWorkers: 5
+
+  # Conntect string to nailgun server. This uses a UNIX socket.  
+  # Defaults to: "local:/<install-path>/psmetric.socket"
+  # For Windows override this with a simple TCP Port
+  #nailgunServerConn: local:/tmp/psmetric.socket
+
+  # Setup a unique domain name by concatenating the host to the domain name
+  # If you use generic domain names, set to "true" to append host to name to make it unique
+  #concatDomainHost: false
+
+  # If you have long host names, and only want to append the last few characters,
+  # Set 'useLastXCharsOfHost' to the number of characters from the end of the host name
+  #useLastXCharsOfHost: 0
+  
+  # You can leverage the domain target list in different ways
+  # Option 1 (default): Monitor all domains/instance in the inventory file.
+  #    The inventory file could be a list of just local domains or full
+  #    list of all your PeopleSoft instance local and remote.  The inventory file
+  #    could be local or on a share drive path.
+  # Option 2: Set "localInventoryOnly: true" will read the inventory and only
+  #    monitor domains on the current host.  This is intended for when the
+  #    inventory file is stored on a shared drive, but each beat only monitors
+  #    the local domains/instances running on the current host.
+  #localInventoryOnly: false
+----
+
+[float]
+=== Metricsets
+
+The following metricsets are available:
+
+* <<psoftbeat-metricset-psoft-stat,stat>>
+
+include::psoft/stat.asciidoc[]
+

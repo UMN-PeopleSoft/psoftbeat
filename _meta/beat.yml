@@ -25,23 +25,3 @@ setup.template.settings:
   index.number_of_shards: 1
   index.codec: best_compression
   #_source.enabled: false
-# Module: psoft
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat//metricbeat-module-psoft.html
-
-
-setup.dashboards.enabled: true
-
-psoftbeat.modules:
-
-  - module: psoft
-    metricsets: ["stat"]
-    enabled: true
-    period: 30s
-    hosts: ["localhost"]
-    pathInventoryFile: "domainList.csv"
-    pathBlackoutFile: "blackoutList.csv"
-    pathExclusionFile: "exclusionList.csv"
-    attribWebMetrics: "web_metric.yaml"
-    attribAppMetrics: "app_metric.yaml"
-    attribPrcMetrics: "prc_metric.yaml"
-    javaPath: "/psoft/admin/software/java/jdk1.8.0_141/jre"

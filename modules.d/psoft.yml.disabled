@@ -1,20 +1,27 @@
 # Module: psoft
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat//metricbeat-module-psoft.html
+# Docs: https://www.elastic.co/guide/en/beats/psoftbeat/7.6/psoftbeat-module-psoft.html
 
+- module: psoft
+  metricsets: ["stat"]
+  enabled: true
+  # Duration between each metric capture
+  period: 60s
+  # target host, not used for psoftbeat
+  hosts: ["localhost"]
 
-setup.dashboards.enabled: true
+  # Domain list is the inventory of of peoplesoft instances to monitor.
+  # This could be in relative path to the psoftbeat install, or reference
+  # an explicit path where the inventory may be on a shared drive.
+  # See Documents on format of that file.
+  pathInventoryFile: "domainList.csv"
 
-psoftbeat.modules:
+  # JMX will use a java client, need path to an installed java home.
+  javaPath: "/usr/lib/jvm/jre-1.8.0"
 
-  - module: psoft
-    metricsets: ["stat"]
-    enabled: true
-    period: 30s
-    hosts: ["localhost"]
-    pathInventoryFile: "domainList.csv"
-    pathBlackoutFile: "blackoutList.csv"
-    pathExclusionFile: "exclusionList.csv"
-    attribWebMetrics: "web_metric.yaml"
-    attribAppMetrics: "app_metric.yaml"
-    attribPrcMetrics: "prc_metric.yaml"
-    javaPath: "/psoft/admin/software/java/jdk1.8.0_141/jre"
+  # Conntect string to local nailgun service tied to the psoftbeat. 
+  # This uses a UNIX socket by default.  
+  # Defaults to: "local:/<install-path>/psmetric.socket"
+  # For Windows override this with a simple TCP Port
+  # Windows example: "localhost:13010"
+  # The psoftbeat will automatically use this on the client and nailgun connection.
+  #nailgunServerConn: local:/opt/psoftbeat/psmetric.socket

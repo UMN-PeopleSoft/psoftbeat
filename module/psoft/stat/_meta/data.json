@@ -1,99 +1,92 @@
 {
-"@timestamp": "2019-05-23T05:04:05.204Z",
-"@metadata": {
-  "beat": "psoftbeat",
-  "type": "doc",
-  "version": "1.00"
-},
-"metricset": {
-  "rtt": 2404277,
-  "name": "stat",
-  "module": "psoft",
-  "host": "localhost"
-},
-"event": {
-  "dataset": "psoft.stat",
-  "duration": 2404277910
-},
-"psoft": {
-  "stat": {
-    "weblogic_ersion": "NA",
-    "appenv": "csupg",
-    "web": {
-      "jvm": {
-        "system_load_avg_1min": 0.6,
-        "heap_free_current": 33,
-        "system_cpu_load": 0.01,
-        "process_cpu_load": 0.03,
-        "heap_free_pct": 1587609600
-      },
-      "standby_count": 17,
-      "jolt": {
-        "requests_per_sec": 0,
-        "req_serialize_avg": 0.17,
-        "total_service_avg": 35.75,
-        "response_avg": 35.31,
-        "sessions_in_use_count": 0,
-        "resp_deserize_avg": 0.27,
-        "sessions_available_count": 2,
-        "service_error_count": 0
-      },
-      "queue_length": 0,
-      "hogging_count": 0,
-      "tcp": {
-        "fin_wait1": 0,
-        "close_wait": 0,
-        "established": 149,
-        "fin_wait2": 0,
-        "time_wait": 17
-      },
-      "requests_per_sec": 5,
-      "sessions_high": 31,
-      "sessions_current": 0,
-      "execute": {
-        "total": "",
-        "idle": 0
-      },
-      "psc": {
-        "exec_time_max": 14496,
-        "exec_time_avg": 406,
-        "request_count": 485
-      },
-      "psp": {
-        "exec_time_avg": 306,
-        "request_count": 190,
-        "exec_time_max": 15765
-      },
-      "pn": {
-        "web_socket_count": 0,
-        "failed_appserver_count": 3,
-        "event_count": 0,
-        "jolt_connection_count": 4
-      },
-      "stuck_count": 0,
-      "overload_rejected_count": 0,
-      "pending_requests": 0
+    "@timestamp":"2016-05-23T08:05:34.853Z",
+    "@metadata": {
+        "beat": "psoftbeat",
+        "type": "doc",
+        "version": "2.00"
+      },      
+    "beat":{
+        "name": "psapptst1.sample.com",
+        "hostname": "psapptst1.sample.com"
     },
-    "serverName": "NA",
-    "tools_version": "8.56.16",
-    "error": {},
-    "health": 0,
-    "app": "cs",
-    "host": "psweb-upg01",
-    "domain_name": "csupg1",
-    "domain_type": "web",
-    "ps_load": 0,
-    "status": 0,
-    "purpose": "main",
-    "env": "upg"
-  }
-},
-"beat": {
-  "version": "1.00",
-  "name": "psapp-tstm01.exa02.umn.edu",
-  "hostname": "psapp-tstm01.exa02.umn.edu"
-},
-"host": {
-  "name": "psapp-tstm01.exa02.umn.edu"
-}
+    "metricset":{
+        "host":"localhost",
+        "module":"psoft",
+        "name":"stat",
+        "rtt":44269
+    },
+    "psoft":{
+        "stat": {
+            "weblogic_ersion": "NA",
+            "appenv": "cstst",
+            "web": {
+              "jvm": {
+                "system_load_avg_1min": 0.6,
+                "heap_free_current": 33,
+                "system_cpu_load": 0.01,
+                "process_cpu_load": 0.03,
+                "heap_free_pct": 1587609600
+              },
+              "standby_count": 17,
+              "jolt": {
+                "requests_per_sec": 0,
+                "req_serialize_avg": 0.17,
+                "total_service_avg": 35.75,
+                "response_avg": 35.31,
+                "sessions_in_use_count": 0,
+                "resp_deserize_avg": 0.27,
+                "sessions_available_count": 2,
+                "service_error_count": 0
+              },
+              "queue_length": 0,
+              "hogging_count": 0,
+              "tcp": {
+                "fin_wait1": 0,
+                "close_wait": 0,
+                "established": 149,
+                "fin_wait2": 0,
+                "time_wait": 17
+              },
+              "requests_per_sec": 5,
+              "sessions_high": 31,
+              "sessions_current": 0,
+              "execute": {
+                "total": "",
+                "idle": 0
+              },
+              "psc": {
+                "exec_time_max": 14496,
+                "exec_time_avg": 406,
+                "request_count": 485
+              },
+              "psp": {
+                "exec_time_avg": 306,
+                "request_count": 190,
+                "exec_time_max": 15765
+              },
+              "pn": {
+                "web_socket_count": 0,
+                "failed_appserver_count": 3,
+                "event_count": 0,
+                "jolt_connection_count": 4
+              },
+              "stuck_count": 0,
+              "overload_rejected_count": 0,
+              "pending_requests": 0
+            },
+            "serverName": "NA",
+            "tools_version": "8.57.14",
+            "error": {},
+            "health": 0,
+            "app": "cs",
+            "host": "pswebtst01",
+            "domain_name": "cstst1",
+            "domain_type": "web",
+            "ps_load": 0,
+            "status": 0,
+            "purpose": "main",
+            "env": "upg"
+        }
+    },
+    "type":"metricsets"
 }

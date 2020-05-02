@@ -3,13 +3,12 @@ package psoft
 import (
 	"github.com/elastic/beats/libbeat/logp"
 	"github.com/elastic/beats/metricbeat/mb"
+
 	"github.com/UMN-PeopleSoft/psoftjmx"
-	//"github.com/gocarina/gocsv"
-	//"github.com/pkg/errors"
 )
 
 // Select psoftJMX API version
-const psoftjmxAPIVersion = "1.00"
+const psoftjmxAPIVersion = "1.1"
 
 var client *psoftjmx.PsoftJmxClient
 
@@ -45,6 +44,10 @@ func NewModule(base mb.BaseModule) (mb.Module, error) {
 			ConcurrentWorkers: config.ConcurrentWorkers,
 			NailgunServerConn: config.NailgunServerConn,
 			JavaPath:          config.JavaPath,
+			ConcatenateDomainWithHost: config.ConcatenateDomainWithHost,
+			UseLastXCharactersOfHost: config.UseLastXCharactersOfHost, 
+			LocalInventoryOnly:config.LocalInventoryOnly,
+		
 		}
 		// send custom configs to the common JMXClient and capture only this type of metricset targets
 		// NewClient will setup the Nailgun server, load JMX queries and attribute lists
